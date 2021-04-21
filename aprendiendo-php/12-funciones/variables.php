@@ -22,4 +22,23 @@ function holamundo(){
 //echo "$year";
 
 holamundo();
+
+
+//Funciones variables
+
+function buenosDias(){
+	return "<h1>Hola!, Buenos dias</h1>";
+}
+function buenasTardes(){
+	return "<h1>Hola!, Buenas tardes, como estas?</h1>";
+}
+function buenasNoches(){
+	return "<h1>Hola!, Buenas noches, que frio hace</h1>";
+}
+
+$horario = "Tardes";
+$miFuncion = "buenas".$horario;
+
+echo $miFuncion();
+
  ?>
