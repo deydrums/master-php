@@ -62,5 +62,21 @@ $year = 2021;
 	}else{
 		echo "<h1> $nombre no es mayor de edad </h1>";
 	}
+	echo "<hr>";
+	//Ejemplo 4
+	$dia = 5;
+	if ($dia == 1) {
+		echo "Es Lunes";
+	}elseif ($dia == 2) {
+		echo "Es Martes";
+	}elseif ($dia == 3) {
+		echo "Es Miercoles";
+	}elseif ($dia == 4) {
+		echo "Es Jueves";
+	}elseif ($dia == 5) {
+		echo "Es Viernes";
+	}
+
+
 
  ?>
