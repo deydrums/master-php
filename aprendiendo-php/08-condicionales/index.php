@@ -18,6 +18,13 @@ IF:
 	>   mayor que
 	<=  menor o igual que
 	>=  mayor o igual que
+
+// OPERADORES LOGICOS
+	&& 			AND Y
+	|| 			OR  O
+	!  			NOT NO
+	and, or
+
 */
 	//Ejemplo 1
 $color = "rojo";
@@ -77,6 +84,25 @@ $year = 2021;
 		echo "Es Viernes";
 	}
 
+	echo "<hr>";
+	//Ejemplo5
+	$edad1 = 18;
+	$edad2 = 64;
+	$edad_oficial = 20;
 
+	if ($edad_oficial >= $edad1 && $edad_oficial <= $edad2){
+		echo "Esta en edad de trabajar";
+	}else{
+		echo "No puede trabajar";
+	}
 
+	echo "<hr>";
+	
+	$pais = "Mexico";
+	if($pais == "Mexico" || $pais == "España"){
+		echo "En este pais se habla español";
+	}else{
+		echo "En este pais no se habla español";
+
+	}
  ?>
