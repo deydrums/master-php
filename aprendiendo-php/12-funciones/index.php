@@ -56,21 +56,33 @@ function calculadora ($numero1, $numero2, $negrita = false){
 	$multiplicacion = $numero1*$numero2;
 	$division = $numero1/$numero2;
 
+	$cadena_texto = "";
+
 	if ($negrita) {
-		echo "<h1>";
+		$cadena_texto .= "<h1>";
 	}
-	echo "Suma: $suma <br>";
-	echo "Resta: $resta <br>";
-	echo "Multiplicacion: $multiplicacion <br>";
-	echo "Division: $division <br>";
-	echo "<hr>";
+	$cadena_texto .= "Suma: $suma <br>";
+	$cadena_texto .= "Resta: $resta <br>";
+	$cadena_texto .= "Multiplicacion: $multiplicacion <br>";
+	$cadena_texto .= "Division: $division <br>";
+	$cadena_texto .= "<hr>";
 	if ($negrita) {
-		echo "</h1>";
+		$cadena_texto .= "</h1>";
 	}
+
+	return $cadena_texto;
 }
 
-calculadora(10,30);
-calculadora(20,30);
-calculadora(100,50, true);
+echo calculadora(10,30);
+echo calculadora(20,30);
+echo calculadora(100,50, true);
+
+
+
+function devuelveElNombre($nombre){
+	return "El nombre es: $nombre";
+}
+
+echo devuelveElNombre("David");
 
  ?>
