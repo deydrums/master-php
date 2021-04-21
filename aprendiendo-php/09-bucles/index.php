@@ -43,6 +43,7 @@ while ($contador <= 10) {
 do {
 	Instrucciones
 } while (Condicion);
+
 */
 echo "<hr>";
 $edad = 18;
