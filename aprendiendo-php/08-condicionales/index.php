@@ -85,6 +85,32 @@ $year = 2021;
 	}
 
 	echo "<hr>";
+	//SWITCH
+	switch ($dia) {
+		case 1:
+			echo "Lunes";
+			break;
+		case 2:
+			echo "Martes";
+			break;
+		case 3:
+			echo "Miercoles";
+			break;
+		case 4:
+			echo "Jueves";
+			break;
+		case 5:
+			echo "Viernes";
+			break;
+		case 6:
+			echo "Sabado";
+			break;
+		default:
+			echo "Es fin de semana";
+			break;
+	}
+
+	echo "<hr>";
 	//Ejemplo5
 	$edad1 = 18;
 	$edad2 = 64;
@@ -97,7 +123,7 @@ $year = 2021;
 	}
 
 	echo "<hr>";
-	
+
 	$pais = "Mexico";
 	if($pais == "Mexico" || $pais == "España"){
 		echo "En este pais se habla español";
