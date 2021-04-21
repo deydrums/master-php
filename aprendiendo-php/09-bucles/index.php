@@ -38,7 +38,18 @@ while ($contador <= 10) {
 	$contador++;
 }
 
-
-var_dump($numero);
+// DO WHILE
+/*
+do {
+	Instrucciones
+} while (Condicion);
+*/
+echo "<hr>";
+$edad = 18;
+$contador = 1;
+do {
+	echo "Tienes acceso al local privado $contador <br>";
+	$contador++;
+} while ($edad >= 18 && $contador <= 10);
 
 ?>
