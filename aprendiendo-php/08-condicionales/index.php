@@ -129,6 +129,17 @@ $year = 2021;
 		echo "En este pais se habla español";
 	}else{
 		echo "En este pais no se habla español";
-
 	}
+
+	// GOTO
+	echo "<hr>";
+	GOTO marca;
+	echo "<h3>Instruccion 1</h3>";
+	echo "<h3>Instruccion 2</h3>";
+	echo "<h3>Instruccion 3</h3>";
+	echo "<h3>Instruccion 4</h3>";
+
+	marca:
+	echo "Me he saltado 4 echos";
+
  ?>
