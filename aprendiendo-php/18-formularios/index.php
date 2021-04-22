@@ -52,6 +52,13 @@
 			<label for="web">Pagina Web:</label>
 			<input type="url" name="web" autofocus="autofocus"><br><br>
 
+			<textarea></textarea><br>
+			Peliculas:<select name="peliculas">
+				<option value="spiderman">Spider-Man</option>
+				<option value="piratas">Piratas del caribe</option>
+				<option value="kongvsgozilla">Kong vs Gozilla</option>
+			</select>
+			<br>
 
 			<input type="submit" name="enviar" value="Enviar" autofocus="autofocus" ><br><br>
 			
