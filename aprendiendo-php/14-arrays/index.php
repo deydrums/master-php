@@ -8,10 +8,15 @@ y para acceder a esos valores se puede usar un indice numerico o alfanumerico.
 */
 $pelicula = "Batman";
 $peliculas = array("Batman", "Spiderman","WonderWoman");
-var_dump($peliculas[2]);
 $cantantes = ['2pac', 'Drake', 'Taylor Swift'];
-var_dump($cantantes);
+//ARRAY ASOCIATIVO
+$personas = array(
+	'nombre' => 'David',
+	'apellidos' => 'Garcia',
+	'web' => 'davgar.com'
+);
 
+echo($personas['apellidos']);
 //echo $cantantes[2];
 
 //RECORRER CON FOR
