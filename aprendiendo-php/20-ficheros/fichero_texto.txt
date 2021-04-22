@@ -1,0 +1,3 @@
+Hola, soy un archivo de texto. 
+Como estas?
+Muy bien y tu?***Soy un texto desde php***
