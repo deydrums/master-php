@@ -35,6 +35,33 @@ foreach ($cantantes as $cantante) {
 }
 echo "</ul>";
 
+//ARRAYS MULTIDIMENSIONALES
+$contactos = array(
+	array(
+		'nombre' => 'Pedro',
+		'email' => 'pedro@php.com'
+	),
+
+	array(
+		'nombre' => 'Luis',
+		'email' => 'luis@php.com'
+	),
+
+	array(
+		'nombre' => 'Javier',
+		'email' => 'jav1025@php.com'
+	),
+
+	array(
+		'nombre' => 'Gabriela',
+		'email' => 'Gaby123@php.com'
+	)
+
+);
+
+foreach ($contactos as $key => $contacto) {
+	echo($contacto['nombre']).'<br>';
+}
 
  ?>
 
