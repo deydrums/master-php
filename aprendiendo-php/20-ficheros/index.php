@@ -22,4 +22,11 @@ fclose($archivo);
 //Eliminar un ficher
 //unlink('archivo_renombrado.txt') or die('Error al borrar');
 
+//Comprobar si existe un fichero
+
+if (file_exists('fichero_texto.txt')) {
+	echo "El archivo existe";
+}else{
+	echo "El archivo no existe";
+}
  ?>
