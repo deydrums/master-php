@@ -37,3 +37,19 @@ SELECT LENGTH(CONCAT(nombre, ' ', apellidos)) AS 'Conversion' FROM usuarios;
 SELECT email, LENGTH (CONCAT(nombre, ' ', apellidos)) AS 'Conversion' FROM usuarios;
 SELECT UPPER(CONCAT('     ', nombre, '     ', apellidos, '     ')) AS 'Conversion' FROM usuarios;
 SELECT TRIM(UPPER(CONCAT('     ', nombre, '     ', apellidos, '     '))) AS 'Conversion' FROM usuarios;
+
+
+#FUNCIONES CON FECHAS
+SELECT email, fecha, CURDATE() AS 'Fecha Actual' FROM usuarios;
+SELECT email, DATEDIFF(fecha, CURDATE()) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYNAME(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYOFMONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYOFWEEK(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYOFYEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, MONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, YEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAY(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, HOUR(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, CURTIME() AS 'Fecha Actual' FROM usuarios;
+SELECT email, SYSDATE() AS 'Fecha Actual' FROM usuarios;
+SELECT email, DATE_FORMAT(fecha,'%d-%m-%y') AS 'Fecha Actual' FROM usuarios;
