@@ -48,5 +48,14 @@ SELECT * FROM usuarios WHERE (YEAR(fecha)%2 = 0);
 
 # 5. Mostrar todos los registros de la tabla usuarios cuyo nombre tenga mas de 
 # 4 letras y que se hayan registrado antes del 2021, y mostrar en mayus.
-
 SELECT UPPER(nombre) AS 'NOMBRE', apellidos FROM usuarios WHERE (LENGTH(nombre)>4) AND (YEAR(fecha)<2021);
+
+#ORDENAR
+SELECT * FROM usuarios ORDER BY id ASC;
+SELECT * FROM usuarios ORDER BY id DESC;
+SELECT * FROM usuarios ORDER BY fecha ASC;
+SELECT * FROM usuarios ORDER BY fecha DESC;
+
+#LIMIT
+SELECT * FROM usuarios LIMIT 3;
+SELECT * FROM usuarios LIMIT 0,2;
