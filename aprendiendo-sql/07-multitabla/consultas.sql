@@ -23,6 +23,10 @@ SELECT c.nombre, COUNT(e.id) AS 'Entradas'
 FROM categorias c
 LEFT JOIN entradas e ON e.categoria_id = c.id GROUP BY e.categoria_id;
 
+#RIGHT JOIN muestra la fila de la derecha y en la izquierda la rellena con null o 0
+SELECT c.nombre, COUNT(e.id) AS 'Entradas'
+FROM entradas e
+RIGHT JOIN categorias c ON e.categoria_id = c.id GROUP BY e.categoria_id;
 
 #Mostrar el email de los usuarios y al lado cuantas entradas tienen
 SELECT u.email, COUNT(e.id) AS 'Entradas' FROM usuarios u, entradas e 
