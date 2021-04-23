@@ -53,3 +53,12 @@ SELECT email, HOUR(fecha) AS 'Fecha Actual' FROM usuarios;
 SELECT email, CURTIME() AS 'Fecha Actual' FROM usuarios;
 SELECT email, SYSDATE() AS 'Fecha Actual' FROM usuarios;
 SELECT email, DATE_FORMAT(fecha,'%d-%m-%y') AS 'Fecha Actual' FROM usuarios;
+
+#FUNCIONES GENERALES
+SELECT email, ISNULL(apellidos) FROM usuarios;
+SELECT email, STRCMP('HOLA','HOLA') FROM usuarios;
+SELECT VERSION() FROM usuarios;
+SELECT USER() FROM usuarios;
+SELECT DISTINCT USER() FROM usuarios;
+SELECT DISTINCT DATABASE() FROM usuarios;
+SELECT IFNULL (apellidos, 'Este campo esta vacio') FROM usuarios;
