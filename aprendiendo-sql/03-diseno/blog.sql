@@ -1,9 +1,10 @@
 CREATE TABLE usuarios(
 id			int(255) auto_increment not null,
 nombre		varchar(100) not null,
-apellidos	varchar(100) default'Hola que tal',
+apellidos	varchar(100) not null,
 email		varchar(255) not null,
 password	varchar(255) not null,
+fecha		date not null,
 CONSTRAINT pk_usuarios PRIMARY KEY (id),
 CONSTRAINT uq_email UNIQUE(email)
 )ENGINE=InnoDb;
