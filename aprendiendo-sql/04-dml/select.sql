@@ -3,3 +3,14 @@ SELECT email, nombre, apellidos FROM usuarios;
 
 #MOSTRAR TODOS LOS CAMPOS
 SELECT * FROM usuarios;
+
+#OPERADORES ARITMETICOS
+SELECT email,(7+7) AS 'OPERACION' FROM usuarios;
+SELECT id, email,(id + 7) AS 'OPERACION' FROM usuarios;
+
+
+
+#ORDENAR POR ID
+SELECT id, email,(7%7) AS 'OPERACION' FROM usuarios ORDER BY id ASC;
+SELECT id, email,(7%7) AS 'OPERACION' FROM usuarios ORDER BY id DESC;
+
