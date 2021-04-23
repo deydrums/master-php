@@ -38,5 +38,15 @@ SELECT nombre, apellidos FROM usuarios WHERE YEAR(fecha) = 2020;
 SELECT nombre, apellidos FROM usuarios WHERE YEAR(fecha) != 2020 OR ISNULL(fecha);
 
 # 3. Mostrar el email de los usuarios cuyo apellido contenga la letra A y que su 
-# contraseña contenga 1234
-SELECT email FROM usuarios WHERE apellidos LIKE '%a%';
+# contraseña contenga pedro1234
+SELECT email FROM usuarios WHERE apellidos LIKE '%a%' AND password = 'pedro1234';
+
+SELECT email FROM usuarios WHERE apellidos LIKE '%onz%' AND password LIKE '%1234';
+
+# 4. Mostrar todos los registros de la tabla usuarios cuyo años sea par
+SELECT * FROM usuarios WHERE (YEAR(fecha)%2 = 0);
+
+# 5. Mostrar todos los registros de la tabla usuarios cuyo nombre tenga mas de 
+# 4 letras y que se hayan registrado antes del 2021, y mostrar en mayus.
+
+SELECT UPPER(nombre) AS 'NOMBRE', apellidos FROM usuarios WHERE (LENGTH(nombre)>4) AND (YEAR(fecha)<2021);
