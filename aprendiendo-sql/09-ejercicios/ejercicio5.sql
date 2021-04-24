@@ -4,4 +4,4 @@ el concesionario
 
 */
 
-SELECT nombre, DATEDIFF(CURDATE(), fecha) AS 'Dias' FROM vendedores;
+SELECT CONCAT(nombre, ' ', apellidos) AS 'Nombre y Apellido', fecha, DAYNAME(fecha) AS 'Dia registro' FROM vendedores;
