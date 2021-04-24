@@ -115,7 +115,7 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
-					
+
 					<h2>Titulo de mi entrada</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -136,11 +136,10 @@
 
 		</div>
 
-
-
-
 		<!-- PIE DE PAGINA -->
-
+		<footer id="pie">
+			<p>Desarrollado por David Garcia &copy; 2021 </p>
+		</footer>
 
 	</body>
 </html>
