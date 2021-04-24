@@ -1,0 +1,25 @@
+/*FUENTES*/
+@font-face{
+    font-family: "fajala";
+    src: url(../fonts/fuente.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*GENERALES*/
+*{
+	margin: 0px;									/*Margen*/
+	padding: 0px;									/*Espacio entre contenido y borde*/
+	font-family: sans-serif, Helvetica, Arial;		/*Fuentes*/
+	text-decoration: none;							/*Sin subrayado en enlaces*/
+}
+
+.clearfix{
+	clear: both;
+	clear: none;
+}
+
+
+body{
+	background: url(../img/image.jpg) #F4F4F4;
+}
+
