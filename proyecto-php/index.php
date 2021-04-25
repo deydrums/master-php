@@ -1,7 +1,7 @@
 <?php require_once 'includes/cabecera.php'; ?>
 
 
-		<div id="contenedor">
+		
 			<?php require_once 'includes/lateral.php' ?>
 			<!-- CAJA PRINCIPAL -->
 			<div id="principal">
@@ -66,7 +66,7 @@
 
 			</div> <!-- Fin principal -->
 
-		</div> <!-- Fin contenedor -->
+
 		<?php include_once 'includes/pie.php'; ?>
 
 
