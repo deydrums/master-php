@@ -16,7 +16,7 @@
 	</div>
 	<div id="register" class = "bloque">
 		<?php if (isset($_SESSION['errores'])):?>
-			<?php var_dump($_SESSION['errores']); ?>
+			<!-- <?php // var_dump($_SESSION['errores']); ?> -->
 		<?php endif; ?>
 		<h3>Registrate</h3>
 		<form action="registro.php" method="POST">
