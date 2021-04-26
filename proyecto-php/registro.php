@@ -4,10 +4,10 @@ require_once 'includes/conexion.php';
 if (isset($_POST)) {
 
 	//Recoger los valores del formulario de registro
-	$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-	$apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
-	$email = isset($_POST['email']) ? $_POST['email'] : false;
-	$password = isset($_POST['password']) ? $_POST['password'] : false;
+	$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
+	$apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
+	$email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : false;
+	$password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : false;
 
 	//Array de errores
 
@@ -60,7 +60,7 @@ if (isset($_POST)) {
 		if ($guardar) {
 			$_SESSION['completado'] = "El registro se ha completado con exito";
 		}else{
-			$_SESSION['errores'] = "El usuario ya esta registrado";
+			$_SESSION['errores'] = "Error al registrar el usuario";
 		}
 
 

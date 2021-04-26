@@ -24,9 +24,9 @@
 				<div class="alerta alerta-exito">
 					<?=$_SESSION['completado']?>	
 				</div>
-		<?php elseif(isset($_SESSION['errores'])): ?>
+		<?php elseif(isset($_SESSION['errores']['general'])): ?>
 				<div class="alerta alerta-error">
- 					<?php echo isset($_SESSION['errores'])?$_SESSION['errores']: ' '; ?>
+						<?=$_SESSION['errores']['general']?>
 				</div>
 		<?php endif; ?>
 
