@@ -26,7 +26,7 @@
 				</div>
 		<?php elseif(isset($_SESSION['errores'])): ?>
 				<div class="alerta alerta-error">
-					<?=$_SESSION['errores']?>	
+ 					<?php echo isset($_SESSION['errores'])?$_SESSION['errores']: ' '; ?>
 				</div>
 		<?php endif; ?>
 
