@@ -1,6 +1,8 @@
 <?php 
-session_start();
+//Conexion a la base de datos
+require_once 'includes/conexion.php';
 if (isset($_POST)) {
+
 	//Recoger los valores del formulario de registro
 	$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
 	$apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
@@ -8,6 +10,8 @@ if (isset($_POST)) {
 	$password = isset($_POST['password']) ? $_POST['password'] : false;
 
 	//Array de errores
+
+
 	$errores = array();
 
 	//Validar los datos antes de guardarlos en la base de datos
@@ -42,16 +46,35 @@ if (isset($_POST)) {
 	}
 
 	$guardar_usuario = false;
+	
+
 	if (count($errores) == 0) {
-		//INSERTAR USUARIO EN LA BASE E DATOS EN LA TABLA CORRESPONDIENTE
 		$guardar_usuario = true;
+		//CIFRAR LA CONTRASEÑA
+		$password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
+
+		//INSERTAR USUARIO EN LA BASE E DATOS EN LA TABLA CORRESPONDIENTE
+		$sql = "INSERT INTO usuarios VALUES(null, '$nombre', '$apellidos', '$email', '$password_segura', CURDATE())";
+		$guardar = mysqli_query($db, $sql);
+
+		if ($guardar) {
+			$_SESSION['completado'] = "El registro se ha completado con exito";
+		}else{
+			$_SESSION['errores'] = "El usuario ya esta registrado";
+		}
+
+
 
 	}else{
 		$_SESSION['errores'] = $errores;
-		header('Location: index.php');
+		
 	}
 
 
 }
+
+
+header('Location: index.php');
+
 
  ?>
