@@ -23,6 +23,22 @@ body{
 	background: url(../img/image.jpg) #F4F4F4;
 }
 
+
+.alerta{
+	padding: 5px;
+	font-size: 14px;
+	color: white;
+	background: green;
+	box-shadow: 0px 1px 3px #ccc;
+	margin-bottom: 15px;
+	border-radius: 2px;
+}
+
+
+.alerta_error{
+
+	background: red;
+}
 /*CABECERA*/
 #cabecera{
 	width: 85%;

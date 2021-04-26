@@ -21,11 +21,11 @@
 		<h3>Registrate</h3>
 		<!-- Mostrar errores -->
 		<?php if (isset($_SESSION['completado'])): ?> 
-				<div class="alerta alerta-exito">
+				<div class="alerta alerta_exito">
 					<?=$_SESSION['completado']?>	
 				</div>
 		<?php elseif(isset($_SESSION['errores']['general'])): ?>
-				<div class="alerta alerta-error">
+				<div class="alerta alerta_error">
 						<?=$_SESSION['errores']['general']?>
 				</div>
 		<?php endif; ?>
@@ -39,6 +39,7 @@
 			<label for="apellidos">Apellidos</label>
 			<input type="text" name="apellidos" >
 			<?php echo isset($_SESSION['errores'])?mostrarError($_SESSION['errores'],'apellidos') : ' '; ?>
+
 
 			<label for="email">Email</label>
 			<input type="email" name="email" >
