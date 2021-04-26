@@ -4,7 +4,10 @@
 	<?php if(isset($_SESSION['usuario'])): ?>
 		<div id="usuario_logueado" class="bloque">
 			<h3><?='HOLA! '.$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
-
+			<!--BOTONES -->
+			<a href="cerrar.php" class="boton">Cerrar Sesion</a>
+			<a href="cerrar.php" class="boton boton_naranja">Crear entrada</a>
+			<a href="cerrar.php" class="boton boton_verde">Mis datos</a>
 		</div>
 
 
@@ -12,6 +15,14 @@
 
 	<div id="login" class = "bloque">
 		<h3>Identificate</h3>
+
+		<?php if(isset($_SESSION['error_login'])): ?>
+			<div class="alerta alerta_error">
+				<?=$_SESSION['error_login'] ?>
+
+			</div>
+		<?php endif; ?>
+
 		<form action="login.php" method="POST">
 			<label for="email">Email</label>
 			<input type="email" name="email" >

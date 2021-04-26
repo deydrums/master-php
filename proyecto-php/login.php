@@ -4,6 +4,14 @@ require_once 'includes/conexion.php';
 
 //Recoger los datos del formulario
 if (isset($_POST)) {
+
+
+	//Borar error antiguo
+	if(isset($_SESSION['error_login'] )){
+		unset($_SESSION['error_login']);
+	}
+	//Recoger datos del formulario
+
 	$email = isset($_POST['email'])? mysqli_real_escape_string($db, $_POST['email']) : false;
 	$password = isset($_POST['password'])? mysqli_real_escape_string($db, $_POST['password']) : false;
 	
@@ -19,9 +27,7 @@ if (isset($_POST)) {
 		if ($verify) {
 			//Utilizar una sesion para guardar los datos del usuario logueado
 			$_SESSION['usuario'] =$usuario;
-			if(isset($_SESSION['error_login'] )){
-				unset($_SESSION['error_login']);
-			}
+
 
 		}else{
 			//Si algo falla enviar una sesion con el fallo
