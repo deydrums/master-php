@@ -1,6 +1,8 @@
 
 <!-- BARRA LATERAL -->
 <aside id="sidebar"> 
+
+
 	<?php if(isset($_SESSION['usuario'])): ?>
 		<div id="usuario_logueado" class="bloque">
 			<h3><?='HOLA! '.$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
@@ -14,6 +16,9 @@
 
 
 	<?php endif; ?>
+
+	<!-- Ocultar login y registro al estar loggeado -->
+	<?php if(!isset($_SESSION['usuario'])): ?>
 
 	<div id="login" class = "bloque">
 		<h3>Identificate</h3>
@@ -76,4 +81,6 @@
 		</form>
 		<?php borrarErrores(); ?>
 	</div>
+
+	<?php endif; ?>
 </aside>

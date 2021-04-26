@@ -10,11 +10,14 @@
 
 			<?php 
 				$entradas = conseguirUltimasEntradas($db); 
+
 				if (!empty($entradas)):
 					while ($entrada = mysqli_fetch_assoc($entradas)):
+						//var_dump($entrada);
 			?>
 
 					<a href="entrada.php?id=<?=$entrada['id']?>"><h2><?=$entrada['titulo']?></h2></a>
+					<span class="fecha"><?=$entrada['categoria'].' | '.$entrada['fecha'].' | Autor: '.$entrada['usuario']?></span>
 					<p><?= substr($entrada['descripcion'], 0,200)." ..."?></p>	
 				<?php 
 					endwhile; 
