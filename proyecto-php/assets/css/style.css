@@ -175,12 +175,12 @@ input[type="submit"],
 	text-align: center;
 }
 
-.boton_naranja{
-	background: orange;
+.boton_verde{
+	background: #16bc2a;
 	border-color: black;
 }
 
-.boton_verde{
+.boton_gris{
 	background: gray;
 	border-color: black;
 }
