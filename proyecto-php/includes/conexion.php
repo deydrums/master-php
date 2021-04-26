@@ -8,7 +8,10 @@ $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
 mysqli_query($db, "SET NAMES 'utf8'");
 
 //INICIAR LA SECION
+if (!isset($_SESSION)) {
 	session_start();
+}
+
 if(mysqli_connect_errno()){
 	echo "La Conexion a la base de datos MySQL ha fallado: ".mysqli_connect_error();
 }else{
