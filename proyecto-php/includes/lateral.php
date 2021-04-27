@@ -8,7 +8,7 @@
 			<h3><?='HOLA! '.$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
 			<!--BOTONES -->
 			
-			<a href="cerrar.php" class="boton boton_verde">Crear entrada</a>
+			<a href="crear_entradas.php" class="boton boton_verde">Crear entrada</a>
 			<a href="crear_categoria.php" class="boton boton_verde">Crear categoria</a>
 			<a href="cerrar.php" class="boton boton_gris">Mis datos</a>
 			<a href="cerrar.php" class="boton">Cerrar Sesion</a>
