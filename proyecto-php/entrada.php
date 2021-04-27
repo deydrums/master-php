@@ -29,7 +29,7 @@
 
 				<br>
 				<a href="editar_entrada.php" class="boton boton_verde">Editar entrada</a>
-				<a href="borrar_entrada.php" class="boton boton_azul">Borrar entrada</a>
+				<a href="borrar_entrada.php?id=<?=$entrada['id']?>" class="boton boton_azul">Borrar entrada</a>
 
 			<?php endif; ?>
 
