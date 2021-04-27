@@ -1,16 +1,27 @@
 <?php require_once 'includes/cabecera.php'; ?>
+
+<?php 
+	$categoria = conseguirCategoria($db,$_GET['id']);
+	if (!isset($categoria['id'])){
+		header("Location: index.php");
+	}
+?>
+
+
 <?php require_once 'includes/lateral.php'; ?>
 
 	<!-- CAJA PRINCIPAL -->
 	<div id="principal">
-		<h1>Todas las entradas</h1>
+
+
+		<h1>Entradas de <?=$categoria['nombre']?></h1>
 		<article class="entrada">
 
 
 			<?php 
-				$entradas = conseguirEntradas($db,null,null); 
+				$entradas = conseguirEntradas($db,null,$categoria['id']); 
 
-				if (!empty($entradas)):
+				if ((!empty($entradas)) && (mysqli_num_rows($entradas) >= 1)) :
 					while ($entrada = mysqli_fetch_assoc($entradas)):
 						//var_dump($entrada);
 			?>
@@ -20,9 +31,13 @@
 					<p><?= substr($entrada['descripcion'], 0,200)." ..."?></p>	
 				<?php 
 					endwhile; 
-				endif;
+				else:				
 			?>
-			
+					<div class="alerta">No hay entradas en esta categoria.</div>
+			<?php 
+
+				endif;
+			 ?>
 		</article>
 
 

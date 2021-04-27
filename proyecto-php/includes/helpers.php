@@ -44,17 +44,34 @@ function conseguirCategorias($conexion){
 	return $result;
 }
 
+function conseguirCategoria($conexion,$id){
+	$sql = "SELECT * FROM categorias WHERE id = '$id';";
+	$categorias = mysqli_query($conexion, $sql);
 
-function conseguirEntradas($conexion,$limit=null){
-	$sql = "SELECT e.* , c.nombre AS 'categoria' , CONCAT(u.nombre,' ' ,u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id =c.id INNER JOIN usuarios u ON u.id = e.usuario_id ORDER BY e.id DESC ";
+	$result = array();
 
-	if ($limit) {
-		// $sql = $sql. " LIMIT 4"
-		$sql .= "LIMIT 4;";
-	}else{
-		$sql .= ";";
+	if ($categorias && mysqli_num_rows($categorias) >= 1)  {
+		$result = mysqli_fetch_assoc($categorias);
 	}
 
+	return $result;
+}
+
+
+
+function conseguirEntradas($conexion,$limit=null, $categoria=null){
+	if ($categoria) {
+		$sql = "SELECT e.* , c.nombre AS 'categoria' , CONCAT(u.nombre,' ' ,u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id =c.id INNER JOIN usuarios u ON u.id = e.usuario_id WHERE c.id = '$categoria' ORDER BY e.id DESC ";
+	}else{
+		$sql = "SELECT e.* , c.nombre AS 'categoria' , CONCAT(u.nombre,' ' ,u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id =c.id INNER JOIN usuarios u ON u.id = e.usuario_id ORDER BY e.id DESC ";
+
+		if ($limit) {
+			// $sql = $sql. " LIMIT 4"
+			$sql .= "LIMIT 4;";
+		}else{
+			$sql .= ";";
+		}
+	}
 	$entradas = mysqli_query($conexion, $sql);
 
 	$result = array();

@@ -9,7 +9,7 @@
 
 
 			<?php 
-				$entradas = conseguirEntradas($db,true); 
+				$entradas = conseguirEntradas($db,true,null); 
 				if (!empty($entradas)):
 					while ($entrada = mysqli_fetch_assoc($entradas)):
 						//var_dump($entrada);
