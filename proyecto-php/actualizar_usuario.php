@@ -66,7 +66,8 @@ if (isset($_POST)) {
 			$_SESSION['usuario']['email'] = $email;
 			$_SESSION['completado'] = "Tus datos se han actualizado con exito";
 		}else{
-			$_SESSION['errores']['general'] = "Error al actualizar tus datos";
+			$errores['emailrepetido'] = "El email ya se ha registrado anteriormente";
+			$_SESSION['errores'] = $errores;
 		}
 
 

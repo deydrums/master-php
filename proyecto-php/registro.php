@@ -60,7 +60,8 @@ if (isset($_POST)) {
 		if ($guardar) {
 			$_SESSION['completado'] = "El registro se ha completado con exito";
 		}else{
-			$_SESSION['errores']['general'] = "Error al registrar el usuario";
+			$errores['emailrepetido'] = "El email ya se ha registrado anteriormente";
+			$_SESSION['errores'] = $errores;
 		}
 
 

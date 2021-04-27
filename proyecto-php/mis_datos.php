@@ -7,6 +7,19 @@
 	<h1>Mis datos</h1>
 	<p>Editar tu perfil de usuario.</p>
 	<br>
+
+	<!-- Mostrar errores -->
+	<?php if (isset($_SESSION['completado'])): ?> 
+			<div class="alerta alerta_exito">
+				<?=$_SESSION['completado']?>	
+			</div>
+	<?php elseif(isset($_SESSION['errores'])): ?>
+			<div class="alerta alerta_error">
+					<?=$_SESSION['errores']['emailrepetido']?>
+			</div>
+	<?php endif; ?>
+
+
 		<form action="actualizar_usuario.php" method="POST">
 			<label for="nombre">Nombre</label>
 			<input type="text" name="nombre" value="<?=$_SESSION['usuario']['nombre']?>" >
@@ -23,7 +36,7 @@
 			<input type="submit" name="submit" value="Actualizar">
 
 		</form>
-
+		<?php borrarErrores(); ?>
 
 </div> <!-- Fin principal -->
 

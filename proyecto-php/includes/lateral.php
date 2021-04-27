@@ -51,9 +51,9 @@
 				<div class="alerta alerta_exito">
 					<?=$_SESSION['completado']?>	
 				</div>
-		<?php elseif(isset($_SESSION['errores']['general'])): ?>
+		<?php elseif(isset($_SESSION['errores'])): ?>
 				<div class="alerta alerta_error">
-						<?=$_SESSION['errores']['general']?>
+						<?=$_SESSION['errores']['emailrepetido']?>
 				</div>
 		<?php endif; ?>
 
