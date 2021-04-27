@@ -8,7 +8,7 @@
 
 
 			<?php 
-				$entradas = conseguirEntradas($db,null,null); 
+				$entradas = conseguirEntradas($db,null,null,null); 
 
 				if (!empty($entradas)):
 					while ($entrada = mysqli_fetch_assoc($entradas)):
