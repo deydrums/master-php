@@ -6,9 +6,19 @@ $coche2 = new Coche("Amarillo","Toyota","Corolla",250,200,2);
 $coche3 = new Coche("Amarillo","Nissan","Frontier",150,100,3);
 $coche4 = new Coche("Amarillo","Mercedes","Clase A",100,120,5);
 
+//publica
+$coche->color="Rosa";
+//protected
+$coche->setMarca("Audi");
+var_dump($coche);
+//privada
+var_dump($coche->getModelo());
+
+/*
 var_dump($coche);
 var_dump($coche2);
 var_dump($coche3);
 var_dump($coche4);
+*/
 
  ?>
