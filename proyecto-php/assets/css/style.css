@@ -175,10 +175,11 @@ input[type="submit"],
 	border:1px solid #156785;
 	cursor: pointer;
 	padding: 7px;
+	color:white !important;
 }
 
 .boton{
-	color:white !important;
+	
 	width: 130px;
 	text-align: center;
 }

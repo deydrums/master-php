@@ -72,13 +72,17 @@ function conseguirEntrada($conexion,$id){
 
 
 
-function conseguirEntradas($conexion,$limit=null, $categoria=null,$entrada=null){
+function conseguirEntradas($conexion,$limit=null, $categoria=null,$entrada=null,$busqueda = null){
 
 	/*if ($entrada) {
 		SELECT e.* , c.nombre AS 'categoria' , CONCAT(u.nombre,' ' ,u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id =c.id INNER JOIN usuarios u ON u.id = e.usuario_id WHERE e.id = '$entrada';
 	}*/
 
 	$sql = "SELECT e.* , c.nombre AS 'categoria' , CONCAT(u.nombre,' ' ,u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id =c.id INNER JOIN usuarios u ON u.id = e.usuario_id  ";
+
+	if ($busqueda) {
+		$sql .= "  WHERE e.titulo LIKE '%$busqueda%' ";
+	}
 
 	if ($entrada) {
 		$sql .= "  WHERE e.id = '$entrada' ";
@@ -105,6 +109,8 @@ function conseguirEntradas($conexion,$limit=null, $categoria=null,$entrada=null)
 
 	return $result;
 }
+
+
 
 
 
