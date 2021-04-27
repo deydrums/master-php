@@ -1,15 +1,15 @@
 <?php require_once 'includes/cabecera.php'; ?>
-
 <?php require_once 'includes/lateral.php'; ?>
 
 	<!-- CAJA PRINCIPAL -->
 	<div id="principal">
-		<h1>Ultimas entradas</h1>
+		<h1>Todas las entradas</h1>
 		<article class="entrada">
 
 
 			<?php 
-				$entradas = conseguirEntradas($db,true); 
+				$entradas = conseguirEntradas($db,null); 
+
 				if (!empty($entradas)):
 					while ($entrada = mysqli_fetch_assoc($entradas)):
 						//var_dump($entrada);
@@ -25,15 +25,8 @@
 			
 		</article>
 
-	<div id="ver-todas">
-		<a href="entradas.php">Ver todas las entradas</a>
-	</div>
-
-
 
 	</div> <!-- Fin principal -->
 
 
 <?php include_once 'includes/pie.php'; ?>
-
-
