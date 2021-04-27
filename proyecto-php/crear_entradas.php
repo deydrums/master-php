@@ -11,12 +11,16 @@
 	<form action="guardar_entrada.php" method="POST">
 		<label for="titulo">Titulo de la entrada:</label>
 		<input type="text" name="titulo">
+		<?php echo isset($_SESSION['errores_entrada'])?mostrarError($_SESSION['errores_entrada'],'titulo') : ' '; ?>
 
 		<label for="descripcion">Descripcion:</label>
 		<textarea name="descripcion"></textarea>
+		<?php echo isset($_SESSION['errores_entrada'])?mostrarError($_SESSION['errores_entrada'],'descripcion') : ' '; ?>
 
 		<label for="categoria">Categoria</label>
 		<select name="categoria">
+		<?php echo isset($_SESSION['errores_entrada'])?mostrarError($_SESSION['errores_entrada'],'categoria') : ' '; ?>
+
 			<?php 
 			$categorias = conseguirCategorias($db);
 			if (!empty($categorias)): 
@@ -36,8 +40,7 @@
 
 		<input type="submit" value="Guardar" name="guardar">
 	</form>
-
-
+<?php borrarErrores(); ?>
 
 </div> <!-- Fin principal -->
 

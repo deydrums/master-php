@@ -14,13 +14,13 @@ if (isset($_POST)) {
 	//Validar los datos antes de guardarlos en la base de datos
 	//Validar campo nombre
 	if (empty($titulo)) {
-		$erroes['titulo'] = "El titulo no es valido";
+		$errores['titulo'] = "El titulo no es valido";
 	}
 	if (empty($descripcion)) {
-		$erroes['descripcion'] = "La descripcion no es valido";
+		$errores['descripcion'] = "La descripcion no es valido";
 	}
 	if ((empty($categoria)) && (!is_numeric($categoria))) {
-		$erroes['categoria'] = "La categoria no es valida";
+		$errores['categoria'] = "La categoria no es valida";
 	}
 
 
@@ -29,13 +29,15 @@ if (isset($_POST)) {
 		//INSERTAR CATEGORIA EN LA BASE E DATOS EN LA TABLA CORRESPONDIENTE
 		$sql = "INSERT INTO entradas VALUES(null, '$usuario', '$categoria', '$titulo', '$descripcion', CURDATE() )";
 		$guardar = mysqli_query($db, $sql);
+		header('Location: index.php');
 
 	}else{
 		$_SESSION["errores_entrada"] = $errores;
+		header("Location: crear_entradas.php");
 	}
 
 }
 
-header('Location: crear_categoria.php');
+
 
  ?>

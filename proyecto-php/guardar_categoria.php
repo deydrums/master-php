@@ -29,6 +29,7 @@ if (isset($_POST)) {
 
 }
 
-header('Location: crear_categoria.php');
+header('Location: index.php');
+
 
  ?>
