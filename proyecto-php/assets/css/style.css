@@ -171,7 +171,6 @@ input[type="submit"],
 	margin-bottom: 5px;
 	display:block;
 	border-radius: 5px;
-	color: white;
 	background: #007ee5;
 	border:1px solid #156785;
 	cursor: pointer;
@@ -179,6 +178,7 @@ input[type="submit"],
 }
 
 .boton{
+	color:white !important;
 	width: 130px;
 	text-align: center;
 }
@@ -186,6 +186,7 @@ input[type="submit"],
 .boton_verde{
 	background: #16bc2a;
 	border-color: black;
+
 }
 
 .boton_gris{

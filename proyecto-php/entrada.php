@@ -25,6 +25,14 @@
 					<span class="fecha"><?="Publicacion: ".$entrada['fecha'].' | Autor: '.$entrada['usuario']?></span>
 					<p><?= $entrada['descripcion']?></p>	
 
+			<?php if((isset($_SESSION['usuario'])) && ($_SESSION['usuario']['id'] == $entrada['usuario_id'])):?>
+
+				<br>
+				<a href="editar_entrada.php" class="boton boton_verde">Editar entrada</a>
+				<a href="borrar_entrada.php" class="boton boton_azul">Borrar entrada</a>
+
+			<?php endif; ?>
+
 		</article>
 
 
