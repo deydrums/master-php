@@ -14,6 +14,8 @@ var_dump($coche);
 //privada
 var_dump($coche->getModelo());
 
+
+echo $coche->mostrarInfo($coche2);
 /*
 var_dump($coche);
 var_dump($coche2);
