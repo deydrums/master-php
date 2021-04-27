@@ -57,6 +57,19 @@ function conseguirCategoria($conexion,$id){
 	return $result;
 }
 
+function conseguirEntrada($conexion,$id){
+	$sql = "SELECT * FROM entradas WHERE id = '$id';";
+	$entrada = mysqli_query($conexion, $sql);
+
+	$result = array();
+
+	if ($entrada && mysqli_num_rows($entrada) >= 1)  {
+		$result = mysqli_fetch_assoc($entrada);
+	}
+
+	return $result;
+}
+
 
 
 function conseguirEntradas($conexion,$limit=null, $categoria=null,$entrada=null){
