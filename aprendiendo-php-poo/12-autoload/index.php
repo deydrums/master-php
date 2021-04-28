@@ -65,19 +65,26 @@ class Principal{
 
         return $this;
     }
+/*
+    function informacion(){
+        echo __METHOD__;
+    }
+*/
 
 }
 
 
 // Objeto principal
 $principal = new Principal();
-var_dump($principal->usuario);
+//$principal->informacion();
+//var_dump($principal->usuario);
 $metodos = get_class_methods($principal);
 $busqueda = array_search('setEntrada',$metodos);
 var_dump($busqueda);
 
 // Objeto otro paquete
 $usuarios = new UsuarioAdmin();
+$usuarios->informacion();
 var_dump($usuarios);
 
 // Comprobar si existe una clase 
