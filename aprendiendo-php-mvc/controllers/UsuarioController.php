@@ -1,5 +1,5 @@
 <?php 
-class UsuarioController {
+class UsuarioController{
 
     public function mostrarTodos() {
         require_once 'models/usuario.php';

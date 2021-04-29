@@ -1,7 +1,7 @@
 <h1>Bienvenido a mi web con MVC</h1>
 <?php 
-require_once "controllers/usuario.php";
-require_once "controllers/nota.php";
+require_once "autoload.php";
+
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
 }else{
