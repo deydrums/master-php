@@ -7,10 +7,13 @@ class ModeloBase{
         $this->db = database::conectar();
     }
 
-    public function conseguirTodos(){
-        return "Sacando datos de la base de datos";
+    public function conseguirTodos($tabla){
+        $query =$this->db->query("SELECT * FROM $tabla ORDER BY id DESC;");
+        return $query;
     }
     
+
+
     
 }
 
