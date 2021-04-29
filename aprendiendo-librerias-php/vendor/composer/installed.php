@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8c792de9d5a2f548e70a5327b402e2db6bc78a74',
+    'reference' => 'c4fe7ebc639aa74005b6681bc16734a5c71098c4',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8c792de9d5a2f548e70a5327b402e2db6bc78a74',
+      'reference' => 'c4fe7ebc639aa74005b6681bc16734a5c71098c4',
     ),
     'spipu/html2pdf' => 
     array (
@@ -28,6 +28,15 @@
       array (
       ),
       'reference' => 'e6d8ca22347b6691bb8c2652212b1be2c89b3eff',
+    ),
+    'stefangabos/zebra_pagination' => 
+    array (
+      'pretty_version' => '2.3.1',
+      'version' => '2.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a003961cfb21c628a299cefee070f15ed504e67',
     ),
     'tecnickcom/tcpdf' => 
     array (
