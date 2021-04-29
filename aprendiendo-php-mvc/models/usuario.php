@@ -1,6 +1,6 @@
 <?php 
-
-class Usuario{
+require_once 'ModeloBase.php';
+class Usuario extends ModeloBase{
     public $nombre;
     public $apellidos;
     public $email;
@@ -61,11 +61,6 @@ class Usuario{
 
         return $this;
     }
-
-    public function conseguirTodos(){
-        return "Sacando datos de la base de datos";
-    }
-
 
 }
 
