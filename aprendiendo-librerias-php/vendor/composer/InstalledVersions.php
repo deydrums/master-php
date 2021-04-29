@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'deeb0d5902047cfec1ace4944bd4b85f14e69ea6',
+    'reference' => 'cb37988e69b154e5d9bd7f01938d8e01f4aaf77a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'deeb0d5902047cfec1ace4944bd4b85f14e69ea6',
+      'reference' => 'cb37988e69b154e5d9bd7f01938d8e01f4aaf77a',
+    ),
+    'firephp/firephp-core' => 
+    array (
+      'pretty_version' => 'v0.5.3',
+      'version' => '0.5.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2585b6868fe7d3a9d1432b738c3cc547444d0348',
     ),
     'masterexploder/phpthumb' => 
     array (
