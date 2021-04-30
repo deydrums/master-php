@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Tienda de camisetas</title>
-    <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+-->
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tienda de Camisetas</title>
+		<link rel="stylesheet" href="<?=base_url?>assets/css/styles.css" />
+	</head>
+	<body>
     <div id="container">
         <!-- CABECERA -->
         <header id = "header">
