@@ -267,3 +267,14 @@ label{
     margin-bottom: 5%;
     margin-top: 5%;
 }
+/*Pie de pagina__________________________________*/
+#footer {
+    width:100%;
+    clear: both;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    background: #222;
+    border-top: 5px solid #01b1ea;
+}
