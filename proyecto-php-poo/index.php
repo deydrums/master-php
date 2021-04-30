@@ -49,6 +49,7 @@
         <!-- BARRA LATERAL -->
         <aside id = "lateral">
             <div id = "login" class = "block_aside">
+                <h3>Entrar a la web</h3>
                 <form action="" method = "POST">
                     <label for="email">E-mail</label>
                     <input type="email" name="email">
@@ -57,11 +58,11 @@
                     <input type="password" name="password">
 
                     <input type="submit" value="Entrar">
-
-                    <a href="#">Mis pedidos</a>
-                    <a href="#">Gestionar pedidos</a>
-                    <a href="#">Gestionar categorias</a>
-
+                    <ul>
+                        <li><a href="#">Mis pedidos</a></li>
+                        <li><a href="#">Gestionar pedidos</a></li>
+                        <li><a href="#">Gestionar categorias</a></li>
+                    </ul>
 
                 </form>
             </div>
