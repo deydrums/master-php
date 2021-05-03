@@ -73,12 +73,12 @@ class Usuario{
 
     public function getPassword()
     {
-        return $this->password;
+        return password_hash($this->db->real_escape_string($this->$password),PASSWORD_BCRYPT,['cost' => 4]);
     }
 
     public function setPassword($password)
     {
-        $this->password = password_hash($this->db->real_escape_string($password),PASSWORD_BCRYPT,['cost' => 4]);
+        $this->password = $password;
 
         return $this;
     }
@@ -116,6 +116,26 @@ class Usuario{
         $result = false;
         if ($save){
             $result=true;
+        }
+        return $result;
+    }
+
+
+    public function login(){
+        //Comprobar si existe el usuario 
+        $result = false;
+        $email = $this->email;
+        $password = $this->password;
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $login = $this->db->query($sql);
+        if($login && $login->num_rows == 1){
+            $usuario = $login-> fetch_object();
+            //Verificar la contrase;a
+            $verify = password_verify($password,$usuario->password);
+            if($verify){
+                $result = $usuario;
+            }
+
         }
         return $result;
     }
