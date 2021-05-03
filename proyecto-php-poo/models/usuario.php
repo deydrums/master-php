@@ -73,7 +73,7 @@ class Usuario{
 
     public function getPassword()
     {
-        return password_hash($this->db->real_escape_string($this->$password),PASSWORD_BCRYPT,['cost' => 4]);
+        return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]);
     }
 
     public function setPassword($password)
@@ -110,35 +110,41 @@ class Usuario{
         return $this;
     }
 
-    public function save(){
-        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellidos()}','{$this->getEmail()}','{$this->getPassword()}','user',NULL)";
-        $save = $this->db->query($sql);
-        $result = false;
-        if ($save){
-            $result=true;
-        }
-        return $result;
-    }
+	public function save(){
+		$sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user', null);";
+		$save = $this->db->query($sql);
+		
+		$result = false;
+		if($save){
+			$result = true;
+		}
+		return $result;
+	}
 
 
-    public function login(){
-        //Comprobar si existe el usuario 
-        $result = false;
-        $email = $this->email;
-        $password = $this->password;
-        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
-        $login = $this->db->query($sql);
-        if($login && $login->num_rows == 1){
-            $usuario = $login-> fetch_object();
-            //Verificar la contrase;a
-            $verify = password_verify($password,$usuario->password);
-            if($verify){
-                $result = $usuario;
-            }
-
-        }
-        return $result;
-    }
+	public function login(){
+		$result = false;
+		$email = $this->email;
+		$password = $this->password;
+		
+		// Comprobar si existe el usuario
+		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
+		$login = $this->db->query($sql);
+		
+		
+		if($login && $login->num_rows == 1){
+			$usuario = $login->fetch_object();
+			
+			// Verificar la contraseña
+			$verify = password_verify($password, $usuario->password);
+			
+			if($verify){
+				$result = $usuario;
+			}
+		}
+		
+		return $result;
+	}
 }
 
 ?>
