@@ -36,6 +36,11 @@ td{
     border-top: 1px solid #ccc;
     padding: 2px;
 }
+
+.thumb{
+    width: 100px;
+}
+
 /*Container______________________________________*/
 #container {
     width:80%;
