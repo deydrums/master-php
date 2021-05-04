@@ -41,7 +41,7 @@ class ProductoController{
                 $file = $_FILES['imagen'];
                 $filename = $file['name'];
                 $mimetype = $file['type'];
-                
+
                 if ($mimetype == "image/jpeg" ||$mimetype == "image/jpg" || $mimetype == "image/png" || $mimetype == "image/gif") {
                     if (!is_dir('uploads/images')) {
                         mkdir('uploads/images' , 0777,true);
@@ -68,6 +68,16 @@ class ProductoController{
              $_SESSION['producto'] = "complete"; 
         }
         header("Location:".base_url."producto/gestion");
+    }
+
+
+
+    public function editar(){
+        var_dump($_GET);
+    }
+
+    public function eliminar(){
+        var_dump($_GET);
     }
 }
 ?>
