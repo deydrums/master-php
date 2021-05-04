@@ -171,10 +171,13 @@ td{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-#lateral 
+
 
 /*FORMS_________________________________________*/
-
+.form_container {
+    width: 50%;
+    background: red;
+}
 
 label,
 input[type="text"],
