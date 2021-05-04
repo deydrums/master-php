@@ -176,7 +176,8 @@ td{
 /*FORMS_________________________________________*/
 .form_container {
     width: 50%;
-    background: red;
+    text-align: center;
+
 }
 
 label,
