@@ -381,3 +381,20 @@ label{
     background: #222;
     border-top: 5px solid #01b1ea;
 }
+
+/*Carrito________________________________________*/
+.total-carrito{
+    width: 300px;
+    float:right;
+}
+
+.total-carrito h3{
+    float:left;
+    display: block;
+    margin-top: 5px;
+}
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
+}
