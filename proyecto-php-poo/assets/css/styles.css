@@ -30,7 +30,7 @@ a:hover{
 table{
     text-align: center;
     width: 100%;
-    border: 1px solid #555;
+    border: 1px solid #ccc;
 }
 td{
     border-top: 1px solid #ccc;
@@ -341,6 +341,12 @@ label{
     display:block;
     width: 100%;
     float: left;
+}
+
+.img_carrito{
+    height:100px;
+    display: block;
+    margin: 10px auto;
 }
 
 #detail-product .data{
