@@ -4,20 +4,22 @@
         <p>No hay productos para mostrar en esta categoria</p>
     <?php else: ?>
 
-
         <?php while($product = $productos->fetch_object()):?>
         <div class="product">
-            <?php if($product->imagen != null): ?>
-                <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" />
-            <?php else: ?>
-                <img src="<?=base_url?>assets/images/camiseta.png" />
-            <?php endif; ?>
+            <a href="<?=base_url?>producto/ver&id=<?=$product->id?>">
+                <?php if($product->imagen != null): ?>
+                    <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" />
+                <?php else: ?>
+                    <img src="<?=base_url?>assets/images/camiseta.png" />
+                <?php endif; ?>
 
-            <h2><?=$product->nombre?></h2>
+                <h2><?=$product->nombre?></h2>
+            </a>
             <p><?=$product->precio?></p>
             <a href="#" class="button">Comprar</a>
         </div>
         <?php endwhile; ?>
+
 
 
 
