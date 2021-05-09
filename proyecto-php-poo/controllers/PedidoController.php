@@ -24,8 +24,10 @@ class PedidoController{
                 $pedido->setDireccion($direccion);
                 $pedido->setCoste($coste);
                 $save = $pedido->save();
+                //Guardar linea pedidos
+                $save_linea= $pedido->save_linea();
 
-                if($save) {
+                if($save && $save_linea) {
                     $_SESSION['pedido'] = 'complete';
                 }else{
                     $_SESSION['pedido'] = 'failed';
