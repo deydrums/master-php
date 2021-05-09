@@ -37,6 +37,8 @@ class PedidoController{
             }else{
                 $_SESSION['pedido'] = 'failed';
             }
+
+            header('Location:'.base_url.'pedido/confirmado');
             //Guardar datos en la base de datos
 
         }else{
@@ -45,7 +47,9 @@ class PedidoController{
         }
     }
 
-    
+    public function confirmado(){
+        require_once('views/pedido/confirmado.php');
+    }
 }
 
 
