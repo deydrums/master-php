@@ -383,6 +383,17 @@ label{
 }
 
 /*Carrito________________________________________*/
+.delete-carrito{
+    width: 300px;
+    float:left;
+}
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+
 .total-carrito{
     width: 300px;
     float:right;
@@ -398,3 +409,5 @@ label{
     float: right;
     width: 100px;
 }
+
+
