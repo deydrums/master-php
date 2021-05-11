@@ -127,7 +127,7 @@ class Pedido{
         return $this;
     }
     public function getAll(){
-        $productos = $this->db->query("SELECT * FROM pedidos ORDER BY id DESC");
+        $productos = $this->db->query("SELECT p.*, CONCAT(u.nombre, ' ',u.apellidos) AS 'cliente' FROM pedidos p INNER JOIN usuarios u ON u.id = p.usuario_id ORDER BY p.id DESC");
         return $productos;
     }
 
@@ -147,7 +147,8 @@ class Pedido{
     }
 
     public function getAllByUser(){
-        $sql = "SELECT p.* FROM pedidos p "
+        $sql = "SELECT p.*, CONCAT(u.nombre, ' ',u.apellidos) AS 'cliente' FROM pedidos p "
+        . "INNER JOIN usuarios u ON u.id = p.usuario_id "
         ."WHERE p.usuario_id  = {$this->getUsuario_id()} ORDER BY id DESC;";
 
         
