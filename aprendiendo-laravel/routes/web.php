@@ -41,5 +41,8 @@ Route::get('/listado-peliculas',function(){
     $titulo = 'Listado de peliculas';
     $listado = array('Batman', 'Spiderman','Ironman');
     return view('peliculas.listado')->with('titulo',$titulo)->with('listado',$listado);
+});
 
+Route::get('/pagina-generica',function(){
+    return view('pagina');
 });
