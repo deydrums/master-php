@@ -146,6 +146,16 @@ class Pedido{
         return $pedido->fetch_object();
     }
 
+    public function getAllByUser(){
+        $sql = "SELECT p.* FROM pedidos p "
+        ."WHERE p.usuario_id  = {$this->getUsuario_id()} ORDER BY id DESC;";
+
+        
+        $pedido = $this->db->query($sql);
+        return $pedido;
+    }
+
+
     public function getProductsByPedido($id){
         $sql = "SELECT pr.* , lp.unidades FROM productos pr "
         ."INNER JOIN lineas_pedidos lp ON pr.id = lp.producto_id "

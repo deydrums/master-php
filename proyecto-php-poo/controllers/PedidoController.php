@@ -60,6 +60,20 @@ class PedidoController{
 
         require_once('views/pedido/confirmado.php');
     }
+
+    public function mis_pedidos(){
+        Utils::isIdentity();
+        $usuario_id = $_SESSION['identity']->id;
+        $pedido = new Pedido();
+        //Sacar todos los pedidos del usuario
+        $pedido->setUsuario_id($usuario_id);
+        $pedidos = $pedido->getAllByUser();
+
+        require_once('views/pedido/mis_pedidos.php');
+    }
+
+
+
 }
 
 
