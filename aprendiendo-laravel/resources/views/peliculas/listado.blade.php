@@ -9,3 +9,9 @@
 ?>
 
 {{--Esto es un comentario BLADE --}}
+
+<?=isset($director)? $director: "No hay director"; ?>
+
+<br>
+
+{{$director ?? 'No hay director'}}
