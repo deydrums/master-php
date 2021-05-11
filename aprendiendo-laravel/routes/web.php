@@ -26,3 +26,9 @@ Route::get('/mostrar-fecha',function(){
     $titulo = "Estoy mostrando la fecha";
     return view('mostrar-fecha',array('titulo'=>$titulo));
 });
+
+Route::get('/pelicula/{titulo?}',function($titulo = 'No hay una pelicula seleccionada'){
+    return view('pelicula', array(
+        'titulo'=>$titulo
+    ));
+});
