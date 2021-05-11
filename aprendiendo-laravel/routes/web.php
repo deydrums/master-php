@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "<h1>Hola Mundo</h1>";
+});
+
+/*
+GET: Conseguir datos 
+POST: Guardar datos   
+PUT: Actualizar recursos  
+DELETE: Eliminar recursos  
+*/ 
+
+Route::get('/mostrar-fecha',function(){
+    $titulo = "Estoy mostrando la fecha";
+    return view('mostrar-fecha',array('titulo'=>$titulo));
 });
