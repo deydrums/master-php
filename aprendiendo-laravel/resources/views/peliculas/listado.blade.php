@@ -23,3 +23,24 @@
 @else
     <h1>El titulo no existe</h1>
 @endif
+<hr>
+<!--Bucles-->
+@for($i = 1; $i <= 20; $i++)
+    El numero es: {{$i}}
+    <br>
+@endfor
+
+<hr>
+<?php $contador = 1 ?>
+@while($contador < 50)
+    @if($contador % 2 == 0)
+        NUMERO PAR: {{$contador}} <br>
+    @endif
+    <?php $contador++; ?>
+@endwhile
+
+<hr>
+
+@foreach($listado as $pelicula)
+    <P>{{$pelicula}}</P>
+@endforeach
