@@ -16,7 +16,7 @@
     <label for="apellidos">Apellidos</label>
     <input type="text" name="apellidos" required>
 
-    <label for="email">Contraseña</label>
+    <label for="email">E-mail</label>
     <input type="email" name="email" required>
 
     <label for="password">Contraseña</label>
