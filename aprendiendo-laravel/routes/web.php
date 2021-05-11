@@ -18,8 +18,12 @@ Route::get('/', function () {
 Route::get('/peliculas/{pagina?}','PeliculaController@index');
 
 
+Route::get('/detalle',[
+    'uses' =>'PeliculaController@detalle',
+    'as' => 'detalle.pelicula'
+    ]);
 
-
+Route::resource('usuario','UsuarioController');
 
 /*
 GET: Conseguir datos 
