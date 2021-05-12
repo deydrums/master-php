@@ -50,3 +50,23 @@ CONSTRAINT pk_likes PRIMARY KEY (id),
 CONSTRAINT fk_likes_users FOREIGN KEY (user_id) REFERENCES users(id),
 CONSTRAINT fk_likes_images FOREIGN KEY (image_id) REFERENCES images(id)
 )ENGINE=InnoDb; 
+
+
+INSERT INTO users VALUES(NULL, 'user', 'David', 'Garcia','deydrums','dagarcia100@gmail.com','david1234',NULL, CURTIME(),CURTIME(), NULL);
+INSERT INTO users VALUES(NULL, 'user', 'Juan', 'Lopez','juanlopez','jlopez@gmail.com','juan1234',NULL, CURTIME(),CURTIME(), NULL);
+INSERT INTO users VALUES(NULL, 'user', 'Marco', 'Perez','marcoperez','mperez@gmail.com','marco1234',NULL, CURTIME(),CURTIME(), NULL);
+
+INSERT INTO images VALUES(NULL, 1,'test.jpg','descripcion de prueba 1',CURTIME(),CURTIME());
+INSERT INTO images VALUES(NULL, 1,'playa.jpg','descripcion de prueba 2',CURTIME(),CURTIME());
+INSERT INTO images VALUES(NULL, 1,'arena.jpg','descripcion de prueba 3',CURTIME(),CURTIME());
+INSERT INTO images VALUES(NULL, 3,'familia.jpg','descripcion de prueba 4',CURTIME(),CURTIME());
+
+INSERT INTO comments VALUES(NULL,1,4,'Buena foto de familia!!!',CURTIME(),CURTIME());
+INSERT INTO comments VALUES(NULL,2,1,'Buena foto de playa!!!',CURTIME(),CURTIME());
+INSERT INTO comments VALUES(NULL,2,4,'Que bueno!!!',CURTIME(),CURTIME());
+
+INSERT INTO likes VALUES(NULL,1,4,CURTIME(),CURTIME());
+INSERT INTO likes VALUES(NULL,2,4,CURTIME(),CURTIME());
+INSERT INTO likes VALUES(NULL,3,1,CURTIME(),CURTIME());
+INSERT INTO likes VALUES(NULL,3,2,CURTIME(),CURTIME());
+INSERT INTO likes VALUES(NULL,2,1,CURTIME(),CURTIME());
