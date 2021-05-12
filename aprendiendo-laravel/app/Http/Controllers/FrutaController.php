@@ -7,7 +7,9 @@ use Illuminate\support\Facades\DB;
 class FrutaController extends Controller
 {
     public function index(){
-        $frutas = DB::table('frutas')->get();
+        $frutas = DB::table('frutas')
+            ->orderBy('id','desc')
+            ->get();
         return view('fruta.index',array(
             'frutas' => $frutas
     ));
