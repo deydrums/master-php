@@ -31,6 +31,15 @@ Route::resource('usuario','UsuarioController');
 Route::get('/formulario','PeliculaController@formulario');
 
 Route::post('recibir','PeliculaController@recibir');
+
+
+//RUTAS DE FRUTA     
+Route::group(['prefix' => 'frutas'],function() {
+    Route::get('index','FrutaController@index');
+});
+
+
+
 /*
 GET: Conseguir datos 
 POST: Guardar datos   
