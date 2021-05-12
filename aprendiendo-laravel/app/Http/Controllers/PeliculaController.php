@@ -17,4 +17,9 @@ class PeliculaController extends Controller
     public function detalle() {
         return view('pelicula.detalle');
     }
+
+    public function redirigir(){
+        return redirect()->route('detalle.pelicula');
+
+    }
 }
