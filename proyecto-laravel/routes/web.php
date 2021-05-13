@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Image;
+//use App\Image;
 
 Route::get('/', function () {
-
+/*
     $images = Image::all();
     foreach($images as $image) {
         echo $image->image_path."<br>";
@@ -28,8 +28,13 @@ Route::get('/', function () {
             }
         }
         echo 'Likes: '.count($image->likes);
-        echo "<hr>";
+        echo "<hr>";    
     }
     die();
+    */
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
