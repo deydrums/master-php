@@ -72,8 +72,13 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
+                            @if(Auth::user()->image)
+                                <img src="{{route('user.avatar',['filename' => Auth::user()->image])}}" class="avatar"/>
+                            @endif
+                        </div>
+                        <div class="form-group row">
+
                             <label for="image_path" class="col-md-4 col-form-label text-md-right">{{ __('Foto de perfil') }}</label>
 
                             <div class="col-md-6">
