@@ -1,8 +1,18 @@
-.avatar{
+.form-group .avatar{
     display:block;
-    width: 40%;
+    width: 50%;
+    max-width:300px;
     height: auto;
     margin: 0 auto;
     border-radius: 50%;
     border:3px solid #666;
+}
+
+.container-avatar img{
+    display:block;
+    border-radius: 50%;
+    max-width:45px;
+    
+
+
 }
