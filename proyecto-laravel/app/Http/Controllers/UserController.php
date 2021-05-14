@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
+
+
 class UserController extends Controller
 {
 
@@ -13,7 +15,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function config(){
         return view('user.config');
     }
