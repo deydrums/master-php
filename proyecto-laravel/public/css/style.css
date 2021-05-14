@@ -65,4 +65,22 @@
 
 .pub_image .description{
     padding:2%;
+    padding-bottom: 0%;
+    margin-left: 0%;
+}
+
+.pub_image .btn-comments{
+    margin:2%;
+    margin-top: 0px;
+}
+
+.likes{
+    float: left;
+    padding:2%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    padding-right: 0.5%;
+}
+.likes img{
+    width:30px;
 }
