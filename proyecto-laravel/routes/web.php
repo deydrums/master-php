@@ -45,5 +45,6 @@ Route::post('/user/update', 'UserController@update')->name('user.update');
 
 Route::get('/user/avatar/{filename}','UserController@getImage')->name('user.avatar');
 
-	
+Route::get('/subir-imagen','ImageController@create')->name('image.create');
+
 Route::get('/notify', 'NotificationController@index');
