@@ -21,6 +21,7 @@
 
 
 .card-header img{
+    display: block;
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -30,9 +31,38 @@
     float:left;
     margin-left:1%;
     margin-right: 3%;
+
 }
 
 .card-header .user-des{
     margin-top: 1.5%;
     margin-left: 8%;
+}
+
+.nickname{
+    color: rgb(160, 160, 160);
+    
+}
+
+.pub_image{
+    margin-bottom: 25px;
+}
+
+.image-container{
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.image-container img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.pub_image .card-body{
+    padding:0px;
+}
+
+.pub_image .description{
+    padding:2%;
 }
