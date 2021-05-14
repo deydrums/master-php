@@ -17,7 +17,22 @@
     padding: 0.09rem;
     background: linear-gradient(90deg, rgb(150, 54, 54) 0%, rgb(0, 0, 0) 35%, rgb(197, 186, 23) 100%);
     object-fit: cover;
-    
+}
 
 
+.card-header img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    padding: 0.09rem;
+    background: linear-gradient(90deg, rgb(150, 54, 54) 0%, rgb(0, 0, 0) 35%, rgb(197, 186, 23) 100%);
+    object-fit: cover;
+    float:left;
+    margin-left:1%;
+    margin-right: 3%;
+}
+
+.card-header .user-des{
+    margin-top: 1.5%;
+    margin-left: 8%;
 }
