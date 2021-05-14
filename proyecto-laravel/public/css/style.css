@@ -39,6 +39,10 @@
     margin-left: 8%;
 }
 
+.card-header .user-des a{
+    color: #444;
+}
+
 .nickname{
     color: rgb(160, 160, 160);
     
