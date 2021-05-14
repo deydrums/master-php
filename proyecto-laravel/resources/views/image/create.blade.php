@@ -7,14 +7,14 @@
             <div class="card">
                 <div class="card-header">Subir nueva imagen</div>
                 <div class="card-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('image.save')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="image_path" class="col-md-3 col-form-label text-md-right">Imagen:</label>
                             <div class="col-md-7">
                                 <input type="file" id="image_path" name="image_path" class="form-control" required>
                                 @if($errors->has('image_path'))
-                                    <span class = "invalid-feedback" role="alert">
+                                    <span class = "invalid-feedback d-block" role="alert">
                                         <strong>{{$errors->first('image_path')}}</strong>
                                     </span>
                                 @endif
