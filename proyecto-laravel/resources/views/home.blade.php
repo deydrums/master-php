@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="comments">
-                    <a href="" class="btn btn-warning btn-comments btn-sm">Comentarios</a>
+                    <a href="" class="btn btn-warning btn-comments btn-sm">Comentarios ({{count($image->comments)}})</a>
                     </div>
                 </div>
             </div>
