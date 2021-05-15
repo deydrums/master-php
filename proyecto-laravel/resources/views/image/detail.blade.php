@@ -63,7 +63,13 @@
                                     <span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($comment->created_at)}}</span>
                                     <p>
                                         {{$comment->content}}
-                                    </p>    
+                                        <br>
+                                        @if(Auth::check() && ($comment->user_id == Auth::user()->id) || $comment->image->user_id == Auth::user()->id)
+                                        <a href="{{route('comment.delete',['id'=>$comment->id])}}" class="btn btn-sm btn-danger">
+                                            Eliminar 
+                                        </a>
+                                        @endif
+                                    </p>
                             </div>
                         @endforeach
                     </div>

@@ -35,4 +35,24 @@ class CommentController extends Controller
             'message' => 'Has publicado tu comentario correctamente.'
         ]);
     }
+
+    public function delete($id){
+        //Conseguir los datos del usuario indentificado
+        $user = \Auth::user();
+
+        //Conseguir objeto del comentario
+        $comment = Comment::find($id);
+
+        //Comprobar si soy el dueño del comentario o de la Publicacion
+        if($user && ($comment->user_id == $user->id) || $comment->image->user_id == $user->id){
+            $comment->delete();
+            return redirect()->route('image.detail',['id' => $comment->image->id])->with([
+                'message' => 'Comentario eliminado correctamente.'
+            ]);
+        }else{
+            return redirect()->route('image.detail',['id' => $comment->image->id])->with([
+                'message' => 'El comentario no se ha eliminado.'
+            ]);
+        }
+    }
 }
