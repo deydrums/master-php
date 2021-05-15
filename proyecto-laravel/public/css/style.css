@@ -96,3 +96,8 @@
 .pub_image .comments{
     padding: 0.5%;
 }
+
+.number_likes{
+    color: gray;
+    font-size: 13px;
+}
