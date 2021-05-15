@@ -45,9 +45,9 @@
                             @endif
                         @endforeach
                         @if($user_like)
-                        <img src="{{asset('img/hearts-red.png')}}" alt="" class="btn-dislike">
+                        <img src="{{asset('img/hearts-red.png')}}" alt="" data-id="{{$image->id}}" class="btn-dislike">
                         @else
-                        <img src="{{asset('img/hearts-gray.png')}}" alt="" class="btn-like">
+                        <img src="{{asset('img/hearts-gray.png')}}" alt="" data-id="{{$image->id}}" class="btn-like">
                         @endif
                         <sapan class="number_likes">{{count($image->likes)}}</sapan>
 
