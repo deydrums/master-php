@@ -30,10 +30,25 @@
                             {{$image->description}}
                         </p>
                     </div>
-
+                    
                     <div class="likes">
-                        <img src="{{asset('img/hearts-gray.png')}}" alt="">
+                        
+                        <!--Comprobar si el usuario ha dado like a la imagen -->
+                        <?php $user_like = false; ?>
+                        @foreach($image->likes as $like)
+                            @if($like->user->id == Auth::user()->id)
+                            <?php $user_like = true; ?>
+                            @endif
+                        @endforeach
+                        @if($user_like)
+                        <img src="{{asset('img/hearts-red.png')}}" alt="" data-id="{{$image->id}}" class="btn-dislike">
+                        @else
+                        <img src="{{asset('img/hearts-gray.png')}}" alt="" data-id="{{$image->id}}" class="btn-like">
+                        @endif
+                        <sapan class="number_likes">{{count($image->likes)}}</sapan>
+
                     </div>
+
                     <div class="clearfix"></div>
                     <div class="comments">
                         <h2>Comentarios ({{count($image->comments)}})</h2>
