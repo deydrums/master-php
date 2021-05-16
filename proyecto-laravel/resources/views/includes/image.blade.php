@@ -4,7 +4,7 @@
         <img src="{{route('user.avatar',['filename' =>$image->user->image])}}">
         @endif
         <div class="user-des">
-        <a href="{{route('image.detail',['id' => $image->id])}}"> {{$image->user->name.' '.$image->user->surname}}
+        <a href="{{route('profile',['id' => $image->user])}}"> {{$image->user->name.' '.$image->user->surname}}
             <span class="nickname">
                 {{'| @'.$image->user->nick}}
             </span>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="comments">
-        <a href="" class="btn btn-warning btn-comments btn-sm">Comentarios ({{count($image->comments)}})</a>
+        <a href="{{route('image.detail',['id' => $image->id])}}" class="btn btn-warning btn-comments btn-sm">Comentarios ({{count($image->comments)}})</a>
         </div>
     </div>
 </div>

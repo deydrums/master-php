@@ -45,7 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     //Relacion one to many /de uno a muchos
     public function images(){
-        return $this->hasMany('App\Images');
+        return $this->hasMany('App\Image');
     }
 
 }
