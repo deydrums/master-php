@@ -7,15 +7,16 @@
             <div class="card">
                 <div class="card-header">Editar mi imagen</div>
                 <div class="card-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('image.update')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="image_id" value="{{$image->id}}">
                         <div class="form-group row">
-                            <label for="image_path" class="col-md-3 col-form-label text-md-right">Actualizar imagen:</label>
+                            <label for="image_path" class="col-md-3 col-form-label text-md-right">Imagen:</label>
                             <div class="col-md-7">
                             <div class="image-container image-detail">
                                 <img src="{{ route('image.file',['filename'=> $image->image_path]) }}" alt="">
                             </div>
-                                <input type="file" id="image_path" name="image_path" class="form-control {{$errors->has('image_path')?'is-invalid' : ''}}" required>
+                                <input type="file" id="image_path" name="image_path" class="form-control {{$errors->has('image_path')?'is-invalid' : ''}}">
                                 @if($errors->has('image_path'))
                                     <span class = "invalid-feedback d-block" role="alert">
                                         <strong>{{$errors->first('image_path')}}</strong>
@@ -38,7 +39,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
-                                <input type="submit" value="Subir Imagen" class="btn btn-primary">
+                                <input type="submit" value="Actualizar Imagen" class="btn btn-primary">
                             </div>
                         </div>     
 
