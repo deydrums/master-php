@@ -17,6 +17,13 @@ class UserController extends Controller
        // $this->middleware('verified');
     }
 
+    public function index(){
+        $users = User::orderBY('id','desc')->paginate(5);    
+        return view('user.index',[
+            'users'=>$users
+        ]);
+    }
+
     public function config(){
         return view('user.config');
     }
@@ -75,4 +82,5 @@ class UserController extends Controller
         $user = User::find($id);
         return view('user.profile',['user'=>$user]);
     }
+
 }

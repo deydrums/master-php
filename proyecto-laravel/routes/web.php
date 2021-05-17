@@ -71,3 +71,5 @@ Route::get('/image/delete/{id}','ImageController@delete')->name('image.delete');
 Route::get('/imagen/editar/{id}','ImageController@edit')->name('image.edit');
 
 Route::post('/image/update', 'ImageController@update')->name('image.update');
+
+Route::get('/gente','UserController@index')->name('user.index');
