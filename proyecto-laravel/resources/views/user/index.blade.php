@@ -5,13 +5,29 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h2>Gente</h2>
+        <form action="{{route('user.index')}}" method="GET" id="buscador">
+            <div class="row buscador">
+                <div class="form-group col">
+                    <input type="text" id="search" class="form-control">
+                </div>
+                <div class="form-group col btn-search">
+                    <input type="submit" value="Buscar" class="btn btn-success">
+                </div>
+            </div>
+            
+        </form>
         <hr>
         @foreach($users as $user)
         <div class="profile-user">      
             <div class="data-user">
             @if($user->image)
                 <img src="{{route('user.avatar',['filename' => $user->image])}}" class="avatar">
+            @else
+                <img src="{{asset('img/unknowimage.jpg')}}" class="avatar">
             @endif
+
+
+
             </div>
 
 

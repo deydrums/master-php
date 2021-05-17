@@ -2,6 +2,8 @@
     <div class="card-header">
         @if($image->user->image)
         <img src="{{route('user.avatar',['filename' =>$image->user->image])}}">
+        @else
+        <img src="{{asset('img/unknowimage.jpg')}}">
         @endif
         <div class="user-des">
         <a href="{{route('profile',['id' => $image->user])}}"> {{$image->user->name.' '.$image->user->surname}}
