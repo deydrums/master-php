@@ -48,7 +48,12 @@
                         <sapan class="number_likes">{{count($image->likes)}}</sapan>
 
                     </div>
-
+                    @if(Auth::user() && Auth::user()->id == $image->user->id)
+                    <div class="actions">
+                        <a href="" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="" class="btn btn-sm btn-primary">Borrar</a>
+                    </div>
+                    @endif
                     <div class="clearfix"></div>
                     <div class="comments">
                         <h2>Comentarios ({{count($image->comments)}})</h2>
