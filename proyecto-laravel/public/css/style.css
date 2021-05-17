@@ -10,9 +10,9 @@
 }
 
 .data-user .avatar{
-    width: 200px;
+    width: 110px;
     max-width:300px;
-    height: 200px;
+    height: 110px;
     margin: 0 auto;
     border-radius: 50%;
     padding: 0.2rem;
@@ -23,13 +23,13 @@
 
 .profile-user{
     height: 200px;
-    margin-bottom: 100px;
+    margin-bottom: 2%;
 }
 
 .profile-user .user-info{
     float: left;
     padding-left: 4%;
-    padding-top: 4%;
+    padding-top: 2%;
 }
 
 .container-avatar img{
