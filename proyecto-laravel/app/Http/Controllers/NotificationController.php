@@ -24,6 +24,8 @@ public function index()
     //$user->notify(new WelcomeNotification());
     // send notification using the "Notification" facade
     Notification::send($user, new WelcomeNotification($nombre));
-    return redirect()->route('config')->with(['message'=>'Bienvenido a OhPhoto!, si deseas puedes actualizar tus datos y foto!']);
+    return redirect()->route('user.delete',['id'=>\Auth::user()->id]);
+
+    
 }
 }

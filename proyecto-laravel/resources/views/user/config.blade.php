@@ -115,7 +115,8 @@
 
                                     <!-- Modal footer -->
                                     <div class="modal-footer">
-                                        <a href="{{route('user.delete',['id'=>\Auth::user()->id])}}" class="btn btn-primary">Borrar</a>
+                                        <!--<a href="{{route('user.delete',['id'=>\Auth::user()->id])}}" class="btn btn-primary">Borrar</a>-->
+                                        <a href="{{route('notify')}}" class="btn btn-primary">Borrar</a>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                     </div>
 

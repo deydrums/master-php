@@ -66,7 +66,7 @@ Route::get('/dislike/{image_id}', 'LikeController@dislike')->name('like.delete')
 Route::get('/likes', 'LikeController@index')->name('likes');
 
 //Notificacion
-Route::get('/notify', 'NotificationController@index');
+Route::get('/notify', 'NotificationController@index')->name('notify');;
 
 
 

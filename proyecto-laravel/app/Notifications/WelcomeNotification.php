@@ -43,11 +43,11 @@ class WelcomeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Bienvenido a '. config('app.name'))
+            ->subject('Cuenta eliminada de '. config('app.name'))
             ->greeting('Hola, '.$this->nombre.'!')
-            ->line('Estás recibiendo este correo porque te has registrado en '. config('app.name').' y te damos la bienvenida!')
-            ->action('Ir a mi cuenta', url('/'))
-            ->line('Si no realizaste el registro, no se requiere realizar ninguna otra acción.')
+            ->line('Estás recibiendo este correo por que has eliminado tu cuenta de '. config('app.name').' si deseas volver, puedes registrate de nuevo.')
+            ->action('Registrarse', url('/register'))
+            ->line('Nos alegraria tenerte de vuelta.')
             ->salutation('Saludos, el equipo de '. config('app.name'));                 
     }
 
