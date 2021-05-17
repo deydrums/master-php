@@ -91,7 +91,41 @@
                                 <button type="submit" class="btn btn-success">
                                     Guardar cambios
                                 </button>
-                                <a href="" class="btn btn-primary">Eliminar mi perfil</a>
+
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                Eliminar mi perfil
+                                </button>
+
+                                <!-- The Modal -->
+                                <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">¿De verdad quieres borrar tu perfil?</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                         Se borrara todo el contenido de tu perfil, si quieres volver, tendrás que crear una nueva cuenta.
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <a href="{{route('user.delete',['id'=>\Auth::user()->id])}}" class="btn btn-primary">Borrar</a>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                    </div>
+
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </form>

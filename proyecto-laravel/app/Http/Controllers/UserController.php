@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use App\User;
+use App\Comment;
+use App\Image;
+use App\Like;
 
 class UserController extends Controller
 {
@@ -86,6 +89,49 @@ class UserController extends Controller
     public function profile($id) {
         $user = User::find($id);
         return view('user.profile',['user'=>$user]);
+    }
+
+
+    public function delete($id){
+        $user = \Auth::user();
+        $comments = Comment::where('user_id',$id)->get();
+        $images = Image::where('user_id',$id)->get();
+        $likes = Like::where('user_id',$id)->get();
+
+
+        if($id == $user->id){
+            //Eliminar comentarios
+            if($comments && count($comments)>= 1){
+                foreach($comments as $comment){
+                    $comment->delete();
+                }
+            }
+        
+            //Eliminar likes
+            if($likes && count($likes)>= 1){
+                foreach($likes as $like){
+                    $like->delete();
+                }
+            }
+            
+             //Eliminar imagenes
+             if($images && count($images)>= 1){
+                foreach($images as $image){
+                    Storage::disk('images')->delete($image->image_path);
+                    $image->delete();
+                }
+            }
+            
+            //Eliminar el usuario 
+            $user->delete();
+
+            $message = array('message'=>'El usuario se ha borrado correctamente');
+        }else{
+            $message = array('message'=>'El usuario no se ha borrado correctamente');
+        }
+
+       return redirect()->route('home')->with($message);
+
     }
 
 }

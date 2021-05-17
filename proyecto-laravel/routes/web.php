@@ -45,6 +45,7 @@ Route::post('/user/update', 'UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}','UserController@getImage')->name('user.avatar');
 Route::get('/perfil/{id}', 'UserController@profile')->name('profile');
 Route::get('/gente/{search?}','UserController@index')->name('user.index');
+Route::get('/user/delete/{id}', 'UserController@delete')->name('user.delete');
 
 //Imagen
 Route::get('/subir-imagen','ImageController@create')->name('image.create');
