@@ -92,4 +92,16 @@ class ImageController extends Controller
 
     }
 
+    public function edit($id){
+        $user = \Auth::user();
+        $image = Image::find($id);
+        if($user && $image && $image->user->id == $user->id){
+            return view('image.edit',[
+                'image'=> $image
+            ]);
+        }else{
+            return redirect()->route('home');
+        }
+    }
+
 }

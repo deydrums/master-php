@@ -50,7 +50,7 @@
                     </div>
                     @if(Auth::user() && Auth::user()->id == $image->user->id)
                     <div class="actions">
-                        <a href="" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="{{route('image.edit',['id'=>$image->id])}}" class="btn btn-sm btn-primary">Editar</a>
                         <!--<a href="{{route('image.delete',['id'=>$image->id])}}" class="btn btn-sm btn-primary">Borrar</a>-->
                         <!-- Button to Open the Modal -->
                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">
