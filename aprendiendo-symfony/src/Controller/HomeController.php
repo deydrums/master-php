@@ -18,4 +18,11 @@ class HomeController extends AbstractController
             'hello' => 'Hola mundo con Symfony 5'
         ]);
     }
+
+    public function animales(){
+        $title = 'Bienvenido a la pagina de Animales';
+        return $this->render('home/animales.html.twig',[
+            'title' => $title
+        ]);
+    }
 }
