@@ -50,4 +50,15 @@ Animales
         {{i}}<br>
     {% endfor %}
 
+
+    {% if aves.color starts with 'gr' %}
+        <h1>Empieza por gr <h1>
+    {% endif %}
+
+
+    {% if aves.color ends with 's' %}
+        <h1>Termina en s <h1>
+    {% endif %}
+
+
 {% endblock %}
