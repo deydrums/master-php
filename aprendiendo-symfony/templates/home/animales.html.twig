@@ -60,21 +60,6 @@ Animales
         <h1>Termina en s <h1>
     {% endif %}
 
-    {# Funciones predefinidas #}
-    <h1>Funciones</h1>
-    <h3>MIN</h3>
-    {{min([9,11,33,99,1])}}
-    <br>
-    <h3>RANDOM</h3>
-    {{random(animales)}}
-    <br>
-    <h3>MAX</h3>
-    {{max([9,11,33,99,1])}}
-    <br>
-    <h3>FOR CON SALTOS</h3>
-    {% for i in range(0,100,5) %}
-        {{i}}<br>
-    {% endfor %}
-
+    {{include('partials/funciones.html.twig',{'nombre':'David Garcia'})}}
 
 {% endblock %}
