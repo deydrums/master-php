@@ -16,3 +16,11 @@
     {% endfor %}
 
     {{dump(animales)}}
+
+    <h1>Filtros</h1>
+
+    {{animales|length}}
+    <br>
+    {% set email = '      dagarcia100@gmail.com       ' %}
+    {{dump(email|trim|upper|lower)}}
+   
