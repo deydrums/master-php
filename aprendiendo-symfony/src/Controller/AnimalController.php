@@ -16,6 +16,16 @@ class AnimalController extends AbstractController
     {
         $animal_repo = $this->getDoctrine()->getRepository(Animal::class);
         $animales = $animal_repo->findAll();
+
+        $animal = $animal_repo->findBy([
+            'raza' => 'Africana'
+        ],[
+            'id' => 'DESC'
+        ]);
+
+        var_dump($animal);
+        die();
+
         return $this->render('animal/index.html.twig', [
             'controller_name' => 'AnimalController',
             'animales' => $animales,
