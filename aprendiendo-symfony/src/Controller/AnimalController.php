@@ -95,4 +95,16 @@ class AnimalController extends AbstractController
         return new Response($message);
     }
 
+    public function delete(Animal $animal){
+        $em = $this->getDoctrine()->getManager();
+        if($animal && is_object($animal)){
+            $em->remove($animal);
+            $em->flush();
+            $message = 'Animal borrado de la base de datos';
+        }else{
+            $message = 'Animal no encontrado en la base de datos';
+        }
+        return new Response($message);
+    }
+
 }
