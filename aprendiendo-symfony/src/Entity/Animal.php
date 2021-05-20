@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Animales
@@ -25,6 +26,8 @@ class Animal
      * @var string
      *
      * @ORM\Column(name="tipo", type="string", length=255, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Regex("/[a-zA-Z]+/")
      */
     private $tipo;
 
@@ -32,13 +35,17 @@ class Animal
      * @var string|null
      *
      * @ORM\Column(name="color", type="string", length=255, nullable=true, options={"default"="Hola que tal"})
+     * @Assert\NotBlank
+     * @Assert\Regex("/[a-zA-Z]+/")
      */
-    private $color = 'Hola que tal';
+    private $color;
 
     /**
      * @var string
      *
      * @ORM\Column(name="raza", type="string", length=255, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Regex("/[a-zA-Z]+/")
      */
     private $raza;
 

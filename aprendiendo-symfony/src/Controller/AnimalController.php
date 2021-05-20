@@ -36,10 +36,11 @@ class AnimalController extends AbstractController
                                 ->getForm();
         $form->handleRequest($request);
 
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
             $em->persist($animal);
             $em->flush();
+            
             //Sesion Flash
             $session = New Session();
             $session->getFlashBag()->add('message', 'Animal creado correctamente');
