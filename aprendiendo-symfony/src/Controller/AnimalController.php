@@ -19,6 +19,28 @@ class AnimalController extends AbstractController
     /**
      * @Route("/animal", name="animal")
      */
+
+    public function validarEmail($email){
+        var_dump($email);
+		$validator = Validation::createValidator();
+		$errores = $validator->validate($email, [
+			new Email()
+		]);
+		
+		if(count($errores) != 0){
+			echo "El email NO SE HA VALIDADO correctamente <br/>";
+			
+			foreach($errores as $error){
+				echo $error->getMessage()."<br/>";
+			}
+			
+		}else{
+			echo "El email HA SIDO validado correctamente";
+		}
+		
+		die();
+    }
+    
 	public function crearAnimal(Request $request){
 		$animal = new Animal();
 		$form = $this->createForm(AnimalType::class, $animal);
