@@ -14,6 +14,7 @@ class AnimalController extends AbstractController
      */
     public function index(): Response
     {
+        $em = $this->getDoctrine()->getManager();
         $animal_repo = $this->getDoctrine()->getRepository(Animal::class);
         $animales = $animal_repo->findAll();
 
@@ -33,6 +34,13 @@ class AnimalController extends AbstractController
         $resultset = $qb ->execute();
 
         var_dump($resultset);
+
+        //DQL 
+        $dql = "SELECT a FROM App\Entity\Animal a ORDER BY a.id DESC";
+        $query = $em->createQuery($dql);
+        $resultset = $query ->execute();
+        var_dump($resultset);
+
 
 
 
