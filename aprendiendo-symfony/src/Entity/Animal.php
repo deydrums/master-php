@@ -27,7 +27,10 @@ class Animal
      *
      * @ORM\Column(name="tipo", type="string", length=255, nullable=false)
      * @Assert\NotBlank
-     * @Assert\Regex("/[a-zA-Z]+/")
+     * @Assert\Regex(
+     *      pattern="/[a-zA-Z]+/",
+     *      message="El tipo debe estar formado por letras"
+     * )
      */
     private $tipo;
 
