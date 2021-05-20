@@ -23,8 +23,18 @@ class AnimalController extends AbstractController
             'id' => 'DESC'
         ]);
 
-        var_dump($animal);
-        die();
+        //var_dump($animal);
+        $qb = $animal_repo->createQueryBuilder('a')
+           // ->andWhere("a.raza = :raza")
+           // ->setParameter('raza', 'Americana')
+            ->orderBy('a.id','DESC')
+            ->getQuery();
+        
+        $resultset = $qb ->execute();
+
+        var_dump($resultset);
+
+
 
         return $this->render('animal/index.html.twig', [
             'controller_name' => 'AnimalController',
