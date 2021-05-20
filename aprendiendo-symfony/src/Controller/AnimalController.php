@@ -33,14 +33,21 @@ class AnimalController extends AbstractController
         
         $resultset = $qb ->execute();
 
-        var_dump($resultset);
+        //var_dump($resultset);
 
         //DQL 
         $dql = "SELECT a FROM App\Entity\Animal a ORDER BY a.id DESC";
         $query = $em->createQuery($dql);
         $resultset = $query ->execute();
-        var_dump($resultset);
+        //var_dump($resultset);
 
+        //SQL 
+        $connection = $this->getDoctrine()->getConnection();
+        $sql = "SELECT * FROM animales ORDER BY id DESC";
+        $prepare = $connection->prepare($sql);
+        $prepare->execute();
+        $resulset = $prepare->fetchAll();
+        var_dump($resultset);
 
 
 
