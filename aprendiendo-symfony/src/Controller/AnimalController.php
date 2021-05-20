@@ -10,50 +10,38 @@ use App\Entity\Animal;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Session\Session;
+use App\Form\AnimalType;
+use Symfony\Component\Validator\Validation;
+use Symfony\Component\Validator\Constraints\Email;
 
 class AnimalController extends AbstractController
 {
     /**
      * @Route("/animal", name="animal")
      */
-    public function crearAnimal(Request $request){
-        $animal = new Animal();
-        $form = $this->createFormBuilder($animal)
-                                // ->setAction($this->generateUrl('animal_save'))
-                                ->setMethod('post')
-                                    ->add('tipo',TextType::class,[
-                                        'label' => "Tipo de animal",
-                                    ])
-                                    ->add('color',TextType::class)
-                                    ->add('raza',TextType::class)
-                                    ->add('submit',SubmitType::class, [
-                                        'label' => 'Crear animal',
-                                        'attr'=> ['class' => 'btn btn-success']
-                                    ])
-                            
-                                    
-
-                                ->getForm();
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($animal);
-            $em->flush();
-            
-            //Sesion Flash
-            $session = New Session();
-            $session->getFlashBag()->add('message', 'Animal creado correctamente');
-            return $this->redirectToRoute('crear_animal');
-
-
-        }
-
-        return $this->render('animal/crear-animal.html.twig',[
-            'form' => $form->createView()
-        ]);
-
-    }
+	public function crearAnimal(Request $request){
+		$animal = new Animal();
+		$form = $this->createForm(AnimalType::class, $animal);
+						
+		$form->handleRequest($request);
+		
+		if($form->isSubmitted() && $form->isValid()){
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($animal);
+			$em->flush();
+			
+			// Sesión flash
+			$session = new Session();
+			//$session->start();
+			$session->getFlashBag()->add('message', 'Animal creado');
+			
+			return $this->redirectToRoute('crear_animal');
+		}
+		
+		return $this->render('animal/crear-animal.html.twig',[
+			'form' => $form->createView()
+		]);
+	}
     public function index(): Response
     {
         $em = $this->getDoctrine()->getManager();
