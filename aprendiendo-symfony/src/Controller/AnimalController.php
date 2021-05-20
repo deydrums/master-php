@@ -9,17 +9,17 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Animal;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class AnimalController extends AbstractController
 {
     /**
      * @Route("/animal", name="animal")
      */
-    public function crearAnimal(){
+    public function crearAnimal(Request $request){
         $animal = new Animal();
         $form = $this->createFormBuilder($animal)
-                                ->setAction($this->generateUrl('animal_save'))
+                                // ->setAction($this->generateUrl('animal_save'))
                                 ->setMethod('post')
                                     ->add('tipo',TextType::class,[
                                         'label' => "Tipo de animal",
@@ -34,6 +34,20 @@ class AnimalController extends AbstractController
                                     
 
                                 ->getForm();
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($animal);
+            $em->flush();
+            //Sesion Flash
+            $session = New Session();
+            $session->getFlashBag()->add('message', 'Animal creado correctamente');
+            return $this->redirectToRoute('crear_animal');
+
+
+        }
+
         return $this->render('animal/crear-animal.html.twig',[
             'form' => $form->createView()
         ]);
@@ -89,6 +103,7 @@ class AnimalController extends AbstractController
     }
 
     public function save(){
+        
         //Guardar en una tabla de la base de datos 
 
         //Cargar el em
