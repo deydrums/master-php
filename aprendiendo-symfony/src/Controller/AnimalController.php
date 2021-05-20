@@ -25,6 +25,7 @@ class AnimalController extends AbstractController
         ]);
 
         //var_dump($animal);
+        //query builder
         $qb = $animal_repo->createQueryBuilder('a')
            // ->andWhere("a.raza = :raza")
            // ->setParameter('raza', 'Americana')
@@ -49,6 +50,9 @@ class AnimalController extends AbstractController
         $resulset = $prepare->fetchAll();
         var_dump($resultset);
 
+        //repositorio
+        $animals = $animal_repo->getAnimalsOrderId('DESC');
+        var_dump($animals);
 
 
         return $this->render('animal/index.html.twig', [
