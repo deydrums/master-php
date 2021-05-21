@@ -23,3 +23,8 @@ create_at               datetime,
 CONSTRAINT pk_tasks PRIMARY KEY (id),
 CONSTRAINT pk_task_user FOREIGN KEY(user_id) REFERENCES users(id)
 )ENGINE=InnoDb;
+
+//crear entidades a partir de la bbdd
+php bin/console doctrine:mapping:import App\Entity annotation --path=src/Entity
+//metodos setter and getter
+ php bin/console make:entity --regenerate App
