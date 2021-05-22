@@ -21,7 +21,7 @@ class UserController extends AbstractController
         //Rellenar el objeto con los datos del formulario
         $form->handleRequest($request);
         //Comprobar si se ha enviado el formulario
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()){
             //Modificando el objeto para guardarlo
             $user->setRole('ROLE_USER');
             $user->setCreateAt(new \DateTime('now'));
