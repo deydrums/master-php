@@ -171,35 +171,48 @@ input[type="submit"]:hover{
 .fl-table td {
     border-right: 1px solid #f8f8f8;
     font-size: 12px;
+    max-width: 250px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 .buttons a{
-    margin-top:0px;
-    width:100%;
-    display: flex;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid #444;
-    padding:1%;
+    background-color: #4CAF50; /* Green */
+    border: none;
     color: white;
-    background-color:rgb(129, 129, 129);
+    padding: 1px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
     
 }
 
 .buttons .btn-show{
-    background-color:rgb(19, 156, 53);
+    background-color:rgb(69, 167, 93);
     
 }
 .buttons .btn-edit{
-    background-color:rgb(151, 151, 151);
+    background-color:rgb(74, 105, 101);
 }
 .buttons .btn-delete{
-    background-color:rgb(255, 71, 71);
+    background-color:rgb(179, 81, 81);
+    display: block;
+    width: 78px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0px auto;
+    margin-top: 3px;
 }
 
 .data-task{
     color: gray;
 }
+
 .fl-table thead th {
     color: #ffffff;
     background: #4FC3A1;
@@ -261,12 +274,12 @@ input[type="submit"]:hover{
     }
     .fl-table td, .fl-table th {
         padding: 25px .625em .625em .625em;
-        height: 105px;
+        height: 110px;
         vertical-align: middle;
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
-        width: 150px;
+        width: 180px;
         font-size: 13px;
         text-overflow: ellipsis;
     }
