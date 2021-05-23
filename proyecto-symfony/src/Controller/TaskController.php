@@ -59,8 +59,13 @@ class TaskController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $task->setCreateAt(new \DateTime('now'));
             $task->setUser($user);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($task);
+            $em->flush();
 
-            var_dump($task);
+            return $this->redirect(
+                $this->generateURL('task_detail',['id' => $task->getId()])
+            );
         }
         return $this->render('task/creation.html.twig', array(
             'form' => $form->createView()
