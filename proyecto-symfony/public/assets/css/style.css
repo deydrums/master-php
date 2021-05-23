@@ -136,6 +136,27 @@ input[type="submit"]:hover{
 
 }
 
+.tasks{
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+}
+table{
+    width: 100%;
+}
+table th{
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #b2cbf7;
+    background: rgb(198, 244, 252);
+}
+
+.table_tasks{
+    background: rgb(255, 255, 255);
+}
+
 
 @media (max-width: 768px) {
     
@@ -149,5 +170,14 @@ input[type="submit"]:hover{
         height: 45px;
         border-bottom: 1px solid #29487d;
     }
+    table th{
+        font-size: 13px;
+        padding: 10px;
+        border-bottom: 1px solid #29487d;
+    }
 
+    .tasks{
+        max-width: 400px;
+    }
 }
+
