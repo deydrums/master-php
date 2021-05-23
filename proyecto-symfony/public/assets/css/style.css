@@ -4,6 +4,10 @@ body {
     background:white;
   }
 
+.clearfix{
+    float:none;
+    clear:both;
+}
 
 .example-wrapper { 
     margin: 1em auto; 
@@ -24,7 +28,47 @@ form{
     border-radius: 8px;
 }
 
+#header {
+    margin: 1em auto; 
+    max-width: 800px; 
+    width: 95%; 
+    font: 18px/1.5 sans-serif; 
+}
 
+#menu{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    background: #eeeeee;
+    line-height: 50px;
+}
+#menu li{
+    float: left;
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 300ms;
+}
+#menu li:hover{
+    background-color: #444;
+
+}
+
+#menu li:hover a{
+    color: white;
+
+}
+
+#menu a{
+    display: block;
+    color: #444;
+    text-decoration: none;
+    transition: all 300ms;
+}
 label {
     display: block;
     width: 80%;
