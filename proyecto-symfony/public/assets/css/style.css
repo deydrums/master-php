@@ -114,6 +114,13 @@ select{
     margin-bottom: 30px;
 }
 
+select {
+    width: 96%;
+
+    border-radius: 2px;
+  }
+
+  
 button,
 input[type="submit"]{
     padding: 19px 39px 18px 39px;
