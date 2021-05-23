@@ -65,6 +65,11 @@ form{
     justify-content: center;
     align-items: center;
 }
+
+.data_user{
+    background: rgb(209, 209, 209);
+}
+
 #menu li:hover{
     background: rgba(0,0,0, .1);
 

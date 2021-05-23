@@ -19,16 +19,20 @@
         <div id="header">
             <h1>Tareas Symfony</h1>
             <ul id="menu">
+
+                {% if app.user %}
                 <li><a href="{{path('tasks')}}">Inicio</a></li>
                 <li><a href="">Mis tareas</a></li>
+                <li class="data_user"><a href="">{{ app.user.name ~ ' ' ~ app.user.surname}}</a></li>
+                <li class="data_user"><a href="{{path('logout')}}">Cerrar Sesión</a></li>
+                {% else %} 
                 <li><a href="{{path('login')}}">Login</a></li>
                 <li><a href="{{path('register')}}">Registro</a></li>
+                {% endif %}
             </ul>
             </div>
             <div class="clearfix"></div>
-                {% if app.user %}
-                    {{dump(app.user)}}
-                {% endif %} 
+
         {% endblock %}
         {% block body %}{% endblock %}
     </body>
