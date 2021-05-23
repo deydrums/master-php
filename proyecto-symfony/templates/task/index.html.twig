@@ -8,24 +8,42 @@
 </style>
 
 <div class="example-wrapper">
-    <div class="tasks">
     <h2>Todas las tareas</h2>
-    <table>
-        <tr>
-            <th>Tarea</th>
-            <th>Prioridad</th>
-            <th>Horas presupuestadas</th>
-            <th>Acciones</th>
-        </tr>
-        {% for task in tasks %}
-        <tr>
-            <th class="table_tasks">{{task.title}}</th>
-            <th class="table_tasks">{{task.priority}}</th>
-            <th class="table_tasks">{{task.hours}}</th>
-            <th class="table_tasks"></th>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="table-wrapper">
+        <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Prioridad</th>
+                <th>Horas presupuestadas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+            <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td class="table_tasks">{{task.title}}</td>
+                <td class="table_tasks">
+                    {% if task.priority == 'high' %}
+                        {{'Alta'}}
+                    {% endif %}
+                    {% if task.priority == 'low' %}
+                        {{'Baja'}}
+                    {% endif %}
+                    {% if task.priority == 'medium' %}
+                        {{'Media'}}
+                    {% endif %}
+                </td>
+                <td class="table_tasks">{{task.hours}}</td>
+                <td class="buttons">
+                    <a href="" class="btn-show">Ver</a>
+                    <a href="" class="btn-edit">Editar</a>
+                    <a href="" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+            <tbody>
+        </table>
     </div>
 
 </div>
