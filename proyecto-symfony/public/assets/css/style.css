@@ -188,6 +188,9 @@ input[type="submit"]:hover{
     background-color:rgb(255, 71, 71);
 }
 
+.data-task{
+    color: gray;
+}
 .fl-table thead th {
     color: #ffffff;
     background: #4FC3A1;
